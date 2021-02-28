@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'The answer'}) %>
+<body>
+
+<div class="container">
+
+    <h1>Congratulations! Ud si que sabe de la vida, y de libros o tal vez peliculas</h1>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/aboZctrHfK8?start=87" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <h2>y tu último codigo es:</h2>
+    <h1>la respuesta + 2</h1>
+    <br>
+   
+    <h2>Ahora pegas los códigos en el orden en el que los ganaste</h2>
+    <form action="/pepinito" method="POST" enctype="application/json">
+      <label for="codigo01">Codigo 1:</label>
+      <input type="number" name="codigo01" id="codigo01">
+      <br>
+      <label for="codigo02">Codigo 2:</label>
+      <input type="number" name="codigo02" id="codigo02">
+      <br>
+      <label for="codigo03">Codigo 3:</label>
+      <input type="number" name="codigo03" id="codigo03">
+      <br>
+      <label for="codigo04">Codigo 4:</label>
+      <input type="number" name="codigo04" id="codigo04">
+      <br>
+      <label for="codigo05">Codigo 5:</label>
+      <input type="number" name="codigo05" id="codigo05">
+      <hr>
+      <button type="submit" id="finalizar">Finalizar!</button>
+    </form>
+
+</div>
+
+<%- include('partials/footer') %>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Simpson Quiz'}) %>
+<body>
+  <header>
+       
+    </header>
+<div class="container">
+  <h1>Yo voy a rockear por siempre, forever, forever, forever</h1>
+  
+  <!-- <h3 style="color:tomato">No es para meterte presion, pero ya lo resolvieron %= allSimpson %> personas 😏 </h3> -->
+  <br>
+
+  <form action="/simpson" method="POST" enctype="application/json">
+    <div>
+       <p>1 - ¿Qué banda toca en la peli de los simpsons?</p>
+       <input type="radio"  id="simpquiz01-1" name="simpquiz01" value="Blink182">
+        <label for="simpquiz01-1">Blink 182</label><br>
+        <input type="radio"  id="simpquiz01-2" name="simpquiz01" value="LosRamones">
+        <label for="simpquiz01-2">Los Ramones</label><br>
+        <input type="radio"  id="simpquiz01-3" name="simpquiz01" value="GreenDay">
+        <label for="simpquiz01-3">Green Day</label><br>
+    </div>
+    <hr>
+    <div>
+      <p>2 - ¿Qué instrumento toca Lisa para atraer a las serpientes en el dia del garrote?</p>
+      <input type="radio"  id="simpquiz02-1" name="simpquiz02" value="Saxofon">
+       <label for="simpquiz02-1">Saxofón</label><br>
+       <input type="radio"  id="simpquiz02-2" name="simpquiz02" value="Bajo">
+       <label for="simpquiz02-2">Bajo</label><br>
+       <input type="radio"  id="simpquiz02-3" name="simpquiz02" value="Guitarra">
+       <label for="simpquiz02-3">Guitarra</label><br>
+   </div>
+   <hr>
+    <div>
+      <p>3 - ¿De qué artista Homero grabó todas sus canciones de la radio?</p>
+      <input type="radio"  id="simpquiz03-1" name="simpquiz03" value="EltonJohn">
+      <label for="simpquiz03-1">Elton John</label><br>
+      <input type="radio"  id="simpquiz03-2" name="simpquiz03" value="GeorgeHarrison">
+      <label for="simpquiz03-2">George Harrison</label><br>
+      <input type="radio"  id="simpquiz03-3" name="simpquiz03" value="JamesTaylor">
+      <label for="simpquiz03-3">James Taylor</label><br>
+    </div>
+    <hr>
+    <div>
+      <p>4 - ¿Qué artista ayuda a cavar para sacar a Bart del pozo?</p>
+      <input type="radio"  id="simpquiz04-1" name="simpquiz04" value="PaulMcCartney">
+      <label for="simpquiz04-1">Paul McCartney</label><br>
+      <input type="radio"  id="simpquiz04-2" name="simpquiz04" value="Bono">
+      <label for="simpquiz04-2">Bono</label><br>
+      <input type="radio"  id="simpquiz04-3" name="simpquiz04" value="Sting">
+      <label for="simpquiz04-3">Sting</label><br>
+    </div>
+    <hr>
+    <div>
+      <p>5 - ¿Con que ciudad confunde Steven Tyler a Springfield cuando toca en la taverna de Moe?</p>
+      <input type="radio"  id="simpquiz05-1" name="simpquiz05" value="Detroit">
+      <label for="simpquiz05-1">Detroit</label><br>
+      <input type="radio"  id="simpquiz05-2" name="simpquiz05" value="Shelbyville">
+      <label for="simpquiz05-2">Shelbyville</label><br>
+      <input type="radio"  id="simpquiz05-3" name="simpquiz05" value="StLouis">
+      <label for="simpquiz05-3">St. Louis</label><br>
+    </div>
+    <hr>
+    <div>
+      <p>6 - ¿A qué banda manda a matar el Sr. Burns en su cumpleaños?</p>
+      <input type="radio"  id="simpquiz06-1" name="simpquiz06" value="Ramones">
+      <label for="simpquiz06-1">Los Ramones</label><br>
+      <input type="radio"  id="simpquiz06-2" name="simpquiz06" value="RollingStones">
+      <label for="simpquiz06-2">Los Rolling Stones</label><br>
+      <input type="radio"  id="simpquiz06-3" name="simpquiz06" value="Beatles">
+      <label for="simpquiz06-3">Los Beatles</label><br>
+    </div>
+    <hr>
+    <div>
+      <p>7 - ¿A que banda real pertenece la canción original de "margerine" que Homero versiona con su banda sadgasm?</p>
+      <input type="radio"  id="simpquiz07-1" name="simpquiz07" value="Bush">
+      <label for="simpquiz07-1">Bush</label><br>
+      <input type="radio"  id="simpquiz07-2" name="simpquiz07" value="Blur">
+      <label for="simpquiz07-2">Blur</label><br>
+      <input type="radio"  id="simpquiz07-3" name="simpquiz07" value="Nirvana">
+      <label for="simpquiz07-3">Nirvana</label><br>
+    </div>
+    <hr>
+    <div>
+      <p>8 - ¿Qué cancion toca Smashing Pumpkins en hullabalooza?</p>
+      <input type="radio"  id="simpquiz08-1" name="simpquiz08" value="1979">
+      <label for="simpquiz08-1">1979</label><br>
+      <input type="radio"  id="simpquiz08-2" name="simpquiz08" value="Tonighttonight">
+      <label for="simpquiz08-2">Tonight tonight</label><br>
+      <input type="radio"  id="simpquiz08-3" name="simpquiz08" value="Zero">
+      <label for="simpquiz08-3">Zero</label><br>
+    </div>
+    <hr>
+    <div>
+      <p>9 - ¿Qué 2 canciones grita Homero para que toquen los WHO?</p>
+      <input type="radio"  id="simpquiz09-1" name="simpquiz09" value="BabaPinball">
+      <label for="simpquiz09-1">Baba O'Riley
+        y Pinball Wizard</label><br>
+      <input type="radio"  id="simpquiz09-2" name="simpquiz09" value="FoolMagic">
+      <label for="simpquiz09-2">Won't get fooled again y Magic Bus</label><br>
+      <input type="radio"  id="simpquiz09-3" name="simpquiz09" value="MagicPinball">
+      <label for="simpquiz09-3">Magic Bus y Pinball Wizard</label><br>
+    </div>
+    <hr>
+    <div>
+      <p>10 - Cuando Bart y Milhouse van a un reci y Homero se queda esperando en el auto, ¿Qué banda fueron a ver?</p>
+      <input type="radio"  id="simpquiz10-1" name="simpquiz10" value="Ratt">
+      <label for="simpquiz10-1">Ratt</label><br>
+      <input type="radio"  id="simpquiz10-2" name="simpquiz10" value="Poison">
+      <label for="simpquiz10-2">Poison</label><br>
+      <input type="radio"  id="simpquiz10-3" name="simpquiz10" value="SpinalTap">
+      <label for="simpquiz10-3">Spinal Tap</label><br>
+    </div>
+    <hr>
+
+      <button type="submit">enviar</button>
+      <p></p>
+  </form>
+
+</div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

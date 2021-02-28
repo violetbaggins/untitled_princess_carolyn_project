@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: '<span-a-lot>'}) %>
+<body>
+<% let span = "< span >" %> 
+<div class="container">
+
+  <h1>Span-a-lot</h1>
+  <!-- <h3 style="color:tomato">Cantidad de veces resuelto: %= allSpan %> </h3> -->
+
+  <p>Para este desafio tenes que ingresar una clave de 6 caracteres.</p>
+  <p>¿De dónde la sacas? están en la página anterior envueltas en <%= span %>.</p>
+  <p>Y para romper un poco mas las bolas, la hice 'case sensitive'</p>
+
+  <form action="/span" method="POST" enctype="application/json">
+       
+        <input type="text" name="spanword">
+        <button type="submit">enviar</button>
+
+  </form>
+  <br>
+  <br>
+<hr>
+<a href="https://en.wikipedia.org/wiki/Spamalot" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Spamalot_poster.jpg/220px-Spamalot_poster.jpg" alt=""></a>
+
+
+</div>
+ 
+
+  <%- include('partials/footer') %>
+</body>
+</html>

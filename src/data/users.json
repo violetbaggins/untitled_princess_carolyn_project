@@ -1,0 +1,182 @@
+[
+ {
+  "id": 1,
+  "name": "Randy",
+  "lastname": "Marsh",
+  "email": "cockmagic@mail.com",
+  "password": "123",
+  "bio": "Randy Marsh and Sharon Marsh are fictional characters in the animated television series South Park. They are the most prominent set of parents on the show and a middle-class married couple who raise their 10-year-old son Stan and 13-year-old daughter Shelly in the fictional town of South Park, Colorado",
+  "avatar": "user_avatar_1576933613012.PNG"
+ },
+ {
+  "id": 2,
+  "name": "Stan",
+  "lastname": "Marsh",
+  "email": "lifeisshit@mail.com",
+  "password": "123",
+  "bio": "Stanley 'Stan' Marsh is a main character of the animated television series South Park. He is voiced by and loosely based on series co-creator Trey Parker. Stan is one of the show's four central characters, along with Kyle Broflovski, Kenny McCormick, and Eric Cartman",
+  "avatar": "user_avatar_1576938683673.PNG"
+ },
+ {
+  "id": 3,
+  "name": "Kyle",
+  "lastname": "Broflovski",
+  "email": "jewfro@mail.com",
+  "password": "123",
+  "bio": "Kyle Broflovski is a main character in the animated television series South Park. He is voiced by and loosely based on co-creator Matt Stone. Kyle is one of the show's four central characters, along with his friends Stan Marsh, Kenny McCormick, and Eric Cartman.",
+  "avatar": "user_avatar_1576938729806.PNG"
+ },
+ {
+  "id": 4,
+  "name": "Kenny",
+  "lastname": "McCormick",
+  "email": "mysterion@mail.com",
+  "password": "123",
+  "bio": "Kenneth 'Kenny' McCormick is a main character in the adult animated television series South Park, along with Stan Marsh, Kyle Broflovski, and Eric Cartman. His oft-muffled and indiscernible speech—the result of his parka hood covering his mouth—is provided by co-creator Matt Stone",
+  "avatar": "user_avatar_1576938813069.PNG"
+ },
+ {
+  "id": 5,
+  "name": "Eric",
+  "lastname": "Cartman",
+  "email": "thedawg@mail.com",
+  "password": "123",
+  "bio": "Cartman is foul-mouthed (as are his friends) to provide a means for Parker and Stone to portray how they believe young boys really talk when they are alone.[30][47] According to Parker, Cartman does not possess",
+  "avatar": "user_avatar_1576938867384.PNG"
+ },
+ {
+  "id": 6,
+  "name": "Butters",
+  "lastname": "Stotch",
+  "email": "sugarandspice@mail.com",
+  "password": "123",
+  "bio": "Leopold 'Butters' Stotch is a fictional character in the animated television series South Park. He is voiced by series co-creator Matt Stone and loosely based on co-producer Eric Stough. He is a student at South Park Elementary School",
+  "avatar": "user_avatar_1576938893328.PNG"
+ },
+ {
+  "id": 7,
+  "name": "Wendy",
+  "lastname": "Testaburger",
+  "email": "girlpower@mail.com",
+  "password": "123",
+  "bio": "Wendy Testaburger is a fictional character in the animated television series South Park. She is best known for her on-again, off-again relationship with her boyfriend Stan Marsh, and being more intelligent and mature than most children her age, which is utilized by her activism and feminism",
+  "avatar": "user_avatar_1576939006856.PNG"
+ },
+ {
+  "id": 8,
+  "name": "Timmy",
+  "lastname": "Timmy",
+  "email": "Timmy@mail.com",
+  "password": "123",
+  "bio": "Timothy 'Timmy' Burch is a male fourth-grader at South Park Elementary. He first appeared in the Season Four episode, 'The Tooth Fairy Tats 2000', and is voiced by Trey Parker. He is handicapped, uses a wheelchair to get around, and has a limited vocabulary consisting only of his own name and a small handful of other words and phrases, he is rarely seen doing this, however",
+  "avatar": "user_avatar_1576939032894.PNG"
+ },
+ {
+  "id": 9,
+  "name": "Lisa",
+  "lastname": "Berger",
+  "email": "workbitch@mail.com",
+  "password": "123",
+  "bio": "Lisa Berger is an unpopular, homely-looking girl who is lacking in self-confidence. Frequently bullied, she often spent recess staring at the wall and alone. She's been a member of the cheerleading squad for a while, where the other girls were mostly annoyed by her, with Wendy offering encouragement. After she was rejected by her crush, Butters Stotch, however, an enhanced photograph of Lisa increased her popularity throughout the school, which helped her confidence, and she came to develop quite an ego.",
+  "avatar": "user_avatar_1577061544217.PNG"
+ },
+ {
+  "id": 10,
+  "name": "Señorita",
+  "lastname": "Garrison",
+  "email": "iwantanabortion@mail.com",
+  "password": "123",
+  "bio": "Herbert J Garrison, formerly known as Janet Garrison, is a fictional character in the American animated television series South Park, He is voiced by Trey Parker and first appeared on television on August 13, 1997 in South Park's pilot episode 'Cartman Gets an Anal Probe'.",
+  "avatar": "user_avatar_1577063298975.PNG"
+ },
+ {
+  "id": 11,
+  "name": "Director",
+  "lastname": "P.C.",
+  "email": "bebespc@mail.com",
+  "password": "123",
+  "bio": "Peter Charles, more commonly known as PC Principal, is the current principal at South Park Elementary, first introduced in the Season Nineteen premiere episode, 'Stunning and Brave'. He is highly dedicated to bringing a more politically correct agenda to South Park Elementary, but often resorts to punishment and violence to achieve his ends.",
+  "avatar": "user_avatar_1577063322796.PNG"
+ },
+ {
+  "id": 12,
+  "name": "The",
+  "lastname": "Coon",
+  "email": "thecoon@sianda.com",
+  "password": "123",
+  "bio": "The Coon is a 'superhero' and the costumed alter-ego of Eric Cartman. He first appears in the self-titled episode 'The Coon.' He was also the leader of Coon and Friends in 'Coon 2: Hindsight,' but he was kicked out by the other members because he was beating them up and blackmailing other heroes.",
+  "avatar": "user_avatar_1577143508105.png"
+ },
+ {
+  "id": 13,
+  "name": "Jimmy",
+  "lastname": "Valmer",
+  "email": "standupguy@mail.com",
+  "password": "123",
+  "bio": "Jimmy Valmer (formerly Jimmy Swanson and sometimes spelled Vulmer), voiced by Trey Parker, is physically disabled, requiring forearm crutches in order to walk. His disability has never been specified on the show but seems visually and functionally similar to cerebral palsy.",
+  "avatar": "user_avatar_1577131650977.jpg"
+ },
+ {
+  "id": 14,
+  "name": "Mr.",
+  "lastname": "Hat",
+  "email": "harrisonsalterego@mail.com",
+  "password": "123",
+  "bio": "\r\nin:\r\nCharacters, LGBT characters, Characters voiced by Trey Parker, and 7 more\r\nMr. Hat\r\nEnglish\r\nEDIT\r\n \r\nSHARE\r\nDo you like this video?\r\nMr. Hat\r\nCurrentChewbacca\r\nCurrent\r\nCharacter Information\r\nGender\r\nMale\r\nHair\r\nBrown\r\nOccupation\r\nTeacher's Assistant\r\nVoiced by\r\nTrey Parker[1]\r\nAppearances\r\nFirst\r\n\"Cartman Gets an Anal Probe\"\r\nLatest\r\n\"201\"\r\nMr. Hat is a puppet worn on Herbert Garrison's hand, and Mr. Garrison appears to converse with it. Mr. Hat is used by Mr. Garrison from \"Cartman Gets an Anal Probe\" until \"Summer Sucks\" (Where he is replaced with Mr. Twig), and then from the end of \"Chef Aid\" to his last regular appearance in \"A Ladder to Heaven\". He is replaced by Mr. Slave in the episode \"The Death Camp of Tolerance\". Since then, he only makes one cameo appearance in the episode \"Pre-School\" in a flashback. He returns to the show in the episode \"200\" because Cartman knows that Mr. Hat could know the truth behind Cartman's father.",
+  "avatar": "user_avatar_1577147087751.png"
+ },
+ {
+  "id": 15,
+  "name": "Proyecto integrador",
+  "lastname": "Escudero",
+  "email": "p@dh.com",
+  "password": "123",
+  "bio": "asdssdssssadasd",
+  "avatar": "user_avatar_1601146290758.png"
+ },
+ {
+  "id": 16,
+  "name": "sarazass",
+  "lastname": "ksjkdjasksdjkas",
+  "email": "alexandro.aa86@gmail.com",
+  "password": "dsfkjdfkdfjk",
+  "bio": "assddasdsdsadsdasadsdsdsdads",
+  "avatar": "user_avatar_1601157719387.png"
+ },
+ {
+  "id": 17,
+  "name": "Puedo",
+  "lastname": "guardar",
+  "email": "lo@quiera.com",
+  "password": "123",
+  "bio": "dsdassdasdasdasdasd",
+  "avatar": "user_avatar_1601157854968.jpg"
+ },
+ {
+  "id": 18,
+  "name": "UN User",
+  "lastname": "Para q solo",
+  "email": "p@dh.com",
+  "password": "123",
+  "bio": "req.body",
+  "avatar": "user_avatar_1601158120303.png"
+ },
+ {
+  "id": 19,
+  "name": "UN User",
+  "lastname": "Para q solo",
+  "email": "p@dh.com",
+  "password": "",
+  "bio": "req.body",
+  "avatar": "user_avatar_1601158162846.png"
+ },
+ {
+  "id": 20,
+  "name": "Hank",
+  "lastname": "Scorpio",
+  "email": "scorpion@globex.com",
+  "password": "123",
+  "bio": "Hamacas mariana, aunq yo no le llamo trabajo",
+  "avatar": "user_avatar_1601160322594.png"
+ }
+]

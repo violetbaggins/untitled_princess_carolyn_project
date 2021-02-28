@@ -1,0 +1,157 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap'); */
+/* color code #fcba44  o mejor 255,220, 92*/
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1rem;
+    
+}
+footer{
+    background-color: rgb(54, 54, 54);
+    color: white;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+input{
+    border: 1px dashed rgb(65, 65, 65);
+    border-radius: 20px;
+    border-top-left-radius: 255px 15px;
+	border-top-right-radius: 15px 225px;
+	border-bottom-right-radius: 225px 15px;
+	border-bottom-left-radius:15px 255px;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 5px;
+    box-shadow: -2px 3px rgb(65, 65, 65);
+    margin: 0 5px;
+}
+button{
+    border: 1px solid black;
+    border-radius: 20px;
+    border-top-left-radius: 255px 15px;
+	border-top-right-radius: 15px 225px;
+	border-bottom-right-radius: 225px 15px;
+	border-bottom-left-radius:15px 255px;
+    background-color: rgb(182, 182, 182);
+    color:black;
+    padding: 5px;
+    box-shadow: -2px 3px black;
+}
+footer a{
+    color: moccasin;
+}
+footer a:hover{
+    color: pink;
+}
+hr{
+    border: dashed  0.5px black
+}
+h1, h2, h3, h4, h5, h6{
+    line-height: normal;
+}
+h1{
+    margin: 10px 0;
+}
+ .container{
+    max-width: 1200px;
+    padding: 5px;
+    flex-grow: 1;
+} 
+
+.amarillo{
+    background-color: #fcba44;
+}
+
+
+.caja{
+    border-top: 3px dashed black;
+    border-left: 3px dashed black;
+    border-radius: 20px;
+    border-top-left-radius: 255px 15px;
+	border-top-right-radius: 15px 225px;
+	border-bottom-right-radius: 225px 15px;
+	border-bottom-left-radius:15px 255px;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 10px 10px;
+}
+.caja.desafio{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.caja.quitter{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.aventura-grafica{
+    /* background-color: #ffff00; */
+    position: relative;
+    background-image: url("/images/total_rickall.png");
+    background-size: cover;
+    width: 950px;
+    height: 550px;
+}
+.ag-jerry{
+    /* background-color: rgb(60, 250, 12); */
+    position:absolute;
+    width: 40px;
+    height: 40px;
+    top: 50px;
+    right: 320px;
+    cursor: pointer;
+}
+
+/* view: amarillo */
+
+#cursor{
+    /* background-color: black; */
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+.form-amarillo{
+    z-index: 100;
+}
+
+#instrucciones{
+    display: none;
+}
+#easterEgg01, #easterEgg02, #easterEgg03, #easterEgg04{
+    display: none;
+}
+
+#easterEgg02 {
+    align-self: center;
+}
+#xvalue{
+    display: none
+}
+#yvalue{
+    display: none
+}
+
+@media (max-width: 480px){
+
+    .container{
+        max-width: 470px;
+        flex-grow: 1;
+    } 
+    img {
+        width: 95vw;
+    }
+
+}

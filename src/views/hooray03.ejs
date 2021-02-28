@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Rockear forever'}) %>
+<body>
+
+  <div class="container">
+
+    <h1>Vamooo</h1>
+    <p>Sabes de música, sabes de los simpsons. 👏👏👏</p>
+    <br>
+    
+    <h2>Este es tu cuarto código. Guardalo, te va a servir mas adelante</p>
+    <h1>61</h1>
+    <br>
+    
+    <h2>¡¡¡Último Desafío!!!</h2>
+    <!-- <h4 style="color:tomato">Cantidad de usuarios que ya respondieron bien esta pregunta: %= allUltimate %> </h4> -->
+    <p>¿Cuál es la respuesta a la vida, el universo y todo lo demas?</p>
+    <form action="/ultimate" method="POST" enctype="application/json">
+        <input type="number" name="ultimate">
+        <button type="submit">enviar</button>
+    </form>
+
+  </div>
+ 
+
+ 
+<%- include('partials/footer') %>
+</body>
+</html>

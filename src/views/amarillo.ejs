@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Tinder Code Challenge'}) %>
+<body class=" amarillo">
+  <header>
+    <!-- Ah pero mira que curiose resultaste, tranqui por ahora no vas a encontrar nada aca -->
+       
+    </header>
+<div id="cursor"></div>
+<div class="container">
+
+  <h1>Excelente!</h1>
+  <p>Move el mouse por la pantalla o si estas desde una pantalla touch, tap tap tap</p>
+  <p>para encontrar las instrucciones</p>
+
+  <br>
+  <h3>La respuesta va aca ↓</h3>
+  <form class="form-amarillo" action="/amarillo" method="POST" enctype="application/json">
+      <input type="text" name="respuestaAmarillo">
+      
+      <button type="submit">enviar</button>
+  </form>
+
+  <hr>
+  <input type="text"  id="xvalue">
+  <input type="text"  id="yvalue">
+
+  <div id="instrucciones">
+    
+  </div>
+  
+  <div id="easterEgg01"></div>
+  <div id="easterEgg02"></div>
+  <div id="easterEgg03"></div>
+  <div id="easterEgg04"></div>
+
+</div>
+
+  <%- include('partials/footer') %>
+
+  <script src="/js/amarilloScript.js"></script>
+</body>
+
+</html>

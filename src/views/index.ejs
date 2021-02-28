@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Tinder Code Challenge'}) %>
+<body>
+  <header>
+    <!-- Ah pero mira que curiose resultaste, tranqui por ahora no vas a encontrar nada aca -->
+       
+    </header>
+
+<div class="container">
+  <div class="">
+    <h1>Bienvenido/a/e</h1>
+
+    <p>Buenas, si llegaste acá es porque seguro te pase la pagina yo, tipo "dale, dale probala" y aca estas.</p>
+    <p>Que te puedo decir de los desafios, son preguntas, cosas que se pueden googlear capaz o capaz las podes resolver sin la ayuda de google. Yo jamas me voy a enterar cómo lo hiciste</p>
+    <p>Qué te podes encontrar? "desafios" que incluyen a los simpsons, algo de musica, SMB3, Rick and Morty, etc</p>
+
+    <br>
+    <h2>Bueno basta de cháchara y arranquemos!</h2>
+    <p>La idea es ir resolviendo problemas, desafíos, pruebas, coso. A medida que las vayas resolviendo vas a recibir un código. </p>
+    <p>Si las haces todas bien vas a terminar con 5 códigos que vas a tener que ingresar en la última página y eso te lleva a mas desafios, porque todavia no la termine 😁</p>
+  </div>
+
+  <div class="">
+    <h4>Ahora si, para entrar en los desafios abrí la puerta 🚪</h4>
+    <h2>Speak friend and enter</h2>
+    <!-- Queres una pista? Ya te pones a ver LOTR a ver si aprendes algo. Y si te da mucha paja, bueno se escribe parecido a la fruta que se usa para tomar vino 😋 Seria algo como esto en ingles: (🍉 - 💧) -->
+
+    <form action="/pruebas" method="POST" enctype="application/json">
+        <input type="text" name="word">
+        
+        <button type="submit">enviar</button>
+    </form>
+  </div>
+  <br>
+<hr>
+  <div class="">
+    <h3>🙄 No te da para perder tiempo en estas cosas?</h3>
+    <p>Tranqui, te podes ir sin saber como terminaba todo esto. Te dejo un <a href="/solong">saludo</a></p>
+  </div>
+    
+</div>
+
+  <%- include('partials/footer') %>
+</body>
+</html>

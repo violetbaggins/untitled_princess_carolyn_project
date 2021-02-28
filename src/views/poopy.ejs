@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Mr Poopybutthole'}) %>
+<body>
+  <header>
+       
+    </header>
+<div class="container">
+  
+    <h1>Primer Desafío - Rick and Morty</h1>
+
+    <form action="/poopy" method="POST" enctype="application/json">
+        <p>Usando <a href="https://rickandmortyapi.com/">esta API</a> ingresa en el campo de abajo en cuantos capitulos aparece <b>Mr Poopybutthole</b></p>
+        <input type="number" name="episodes">
+        <button type="submit">enviar</button>
+    </form>
+    <br>
+    <hr>
+
+    <br>
+    <p>Por si no lo conoces (shame on you!)</p>
+    <p>Te dejo una fotito</p>
+    <img src="images/poopy_butthole_get.jpg" alt="">
+
+
+    <!-- <div>
+      <h1>Preferis la "aventura gráfica"?</h1>
+      <div class="aventura-grafica">
+        <br>
+        <div class="ag-jerry" id="ag-jerry"></div>
+        
+      </div>
+    </div> -->
+</div>
+ 
+
+  <%- include('partials/footer') %>
+  <script src="../../js/script.js"></script>
+</body>
+</html>
