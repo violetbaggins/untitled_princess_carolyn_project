@@ -33,6 +33,18 @@ input{
     box-shadow: -2px 3px rgb(65, 65, 65);
     margin: 0 5px;
 }
+textarea{
+    border: 1px dashed rgb(65, 65, 65);
+    border-radius: 20px;
+    border-top-left-radius: 255px 15px;
+	border-top-right-radius: 15px 225px;
+	border-bottom-right-radius: 225px 15px;
+	border-bottom-left-radius:15px 255px;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 10px;
+    box-shadow: -2px 3px rgb(65, 65, 65);
+    margin: 0 5px;
+}
 button{
     border: 1px solid black;
     border-radius: 20px;
@@ -142,6 +154,16 @@ h1{
 }
 #yvalue{
     display: none
+}
+
+/* view: comments */
+.mb{
+    margin-bottom: 10px;
+}
+.comment-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 @media (max-width: 480px){

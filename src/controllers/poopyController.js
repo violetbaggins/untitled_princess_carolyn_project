@@ -2,6 +2,7 @@
 
 const axios = require('axios');
 const fs = require('fs');
+const db = require('../database/models')
 
 const visitorsFilePath = __dirname + '/../data/visitors.json';
 const visitors = JSON.parse(fs.readFileSync(visitorsFilePath, 'utf-8'));
@@ -292,14 +293,28 @@ const controller = {
             let answer = req.body.respuestaAmarillo
 
             if (answer.toLowerCase() == "bgh"){
-
+            
                 // res.redirect('/poopy');
-                res.send("Si, lo lograste")
+                res.render("comments")
             }else{
                 res.render('wrong_answer', {pista: "reliquias, espadas y episodios"})
             }
         
             
+    },
+    comments: (req, res) => {
+            
+        db.Comment.create({
+            name: req.body.name,
+            email: req.body.email,
+            comment: req.body.comment,				
+        })
+        .then(productSaved => {
+            
+            res.send('Comentario enviado');
+        })
+        .catch(error => console.log(error));     
+        
     },
 	form: (req, res) => {
         // busco todas las veces que se resolvio un Mario

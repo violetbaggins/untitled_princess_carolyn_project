@@ -56,6 +56,9 @@ router.post('/pepinito', counterMiddleware, poopyController.pepinito);
 //from pepinito / amarillo.ejs
 router.post('/amarillo', counterMiddleware, poopyController.amarillo);
 
+//from amarillo / comments.ejs
+router.post('/comments', counterMiddleware, poopyController.comments);
+
 
 // Pruebas para guardar datos
 router.get('/form', poopyController.form);
