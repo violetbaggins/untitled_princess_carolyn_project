@@ -23,9 +23,9 @@ const pruebasController = require('../controllers/pruebasController');
 const poopyController = require('../controllers/poopyController');
 
 // middleware
-const counterMiddleware = require('../middlewares/counter');
 
-router.get('/', counterMiddleware, mainController.home);
+
+router.get('/',  mainController.home);
 
 
 // pruebas
@@ -33,31 +33,41 @@ router.post('/pruebas',  pruebasController.pruebasStore);
 router.get('/solong', pruebasController.solong);
 
 //poopy
-router.get('/poopy',  counterMiddleware,poopyController.poopy);
+router.get('/poopy',  poopyController.poopy);
 router.post('/poopy', poopyController.poopyStore);
 
 //span
-router.get('/span', counterMiddleware, poopyController.span);
+router.get('/span',  poopyController.span);
 router.post('/span', poopyController.spanStore);
 
 //Mario results
-router.get('/marioresults',counterMiddleware,  poopyController.mario);
+router.get('/marioresults',  poopyController.mario);
 
 //Simpson
-router.get('/simpson', counterMiddleware, poopyController.simpson);
+router.get('/simpson',  poopyController.simpson);
 router.post('/simpson', poopyController.simpsonStore);
 
 //from hooray03
-router.post('/ultimate',counterMiddleware,  poopyController.ultimate);
+router.post('/ultimate',  poopyController.ultimate);
 
 //from ultimate.ejs
-router.post('/pepinito', counterMiddleware, poopyController.pepinito);
+// router.post('/pepinito',  poopyController.pepinito);
 
-//from pepinito / amarillo.ejs
-router.post('/amarillo', counterMiddleware, poopyController.amarillo);
+//from pepinito
+router.get('/gladiola',  poopyController.gladiola);
+
+//from gladiola.ejs
+router.get('/amarillo',  poopyController.amarillo);
+router.post('/amarillo',  poopyController.amarilloAnswer);
+
+//from gladiola.ejs
+router.get('/javascript',  poopyController.javascript);
+
+// from Javascript
+router.get('/violet',  poopyController.violet);
 
 //from amarillo / comments.ejs
-router.post('/comments', counterMiddleware, poopyController.comments);
+router.post('/comments',  poopyController.comments);
 
 
 // Pruebas para guardar datos

@@ -229,11 +229,7 @@ const controller = {
         
     },
     ultimate:  (req, res) => {
-
-      
-        
-      
-        
+  
         if(req.body.ultimate == "42"){
 
             let userFinalData = {
@@ -252,43 +248,36 @@ const controller = {
                     } 
                 }
 
-            res.render('ultimate', {allUltimate})
+            res.render('ultimate')
         } else {
             res.send('Perdiste')
         }
     },
-    pepinito: (req, res) => {
+   /*  pepinito: (req, res) => {
 
-        
-        // Make a request for a user with a given ID
-        axios.get('https://ipapi.co/json/')
-        
-        .then( function (response) {
-			
-			console.log("--------INFO------------");
-			console.log(response.data.ip);
-			console.log(response.data.city);
-			console.log(response.data.country_name);
-			
-		})
 
-		.catch (error =>{
-			console.log(error.response)
-		});
 
-        let code = (req.body.codigo01+req.body.codigo02+req.body.codigo03+req.body.codigo04+req.body.codigo05)
-        console.log("1 visita a Ultimate fijarse si escribio!!!!");
+    }, */
 
-        if (code ==""){
-            res.render('wrong_answer', {pista: "Y si probas de nuevo?"})
-        }else{
+    gladiola: (req, res) => {
 
-            // res.redirect(``)
-            res.render("amarillo")
-        }
+        res.render("gladiola")
+    },
+    javascript: (req, res) => {
 
+        res.render("noscript")
+    },
+    violet: (req, res) => {
+
+        res.send("lo resolviste!!! bravoooo")
     },
     amarillo: (req, res) => {
+
+        res.render("amarillo")
+    },
+    amarilloAnswer: (req, res) => {
+
+        // esto viene de // 
             
             let answer = req.body.respuestaAmarillo
 

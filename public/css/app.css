@@ -57,6 +57,10 @@ button{
     padding: 5px;
     box-shadow: -2px 3px black;
 }
+
+a{
+    color:cadetblue;
+}
 footer a{
     color: moccasin;
 }
@@ -78,6 +82,10 @@ h1{
     flex-grow: 1;
 } 
 
+iframe{
+    width:560px;
+    height: 315px;
+}
 .amarillo{
     background-color: #fcba44;
 }
@@ -156,6 +164,18 @@ h1{
     display: none
 }
 
+/* Gladiola */
+.opciones{
+    display: flex;
+    justify-content: space-around;
+
+}
+.opcion-1, .opcion-2{
+    padding: 20px;
+    border: 1px solid red;
+}
+
+
 /* view: comments */
 .mb{
     margin-bottom: 10px;
@@ -166,6 +186,15 @@ h1{
     justify-content: center;
 }
 
+.javascript img{
+    width:50%;
+}
+/* texto blanco */
+.txw{
+    color:white;
+}
+
+
 @media (max-width: 480px){
 
     .container{
@@ -175,5 +204,11 @@ h1{
     img {
         width: 95vw;
     }
-
+    iframe{
+        width:100%;
+        height:auto;
+    }
+    p{
+        font-size: 0.9rem;
+    }
 }
