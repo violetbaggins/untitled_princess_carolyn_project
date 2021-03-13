@@ -7,15 +7,29 @@
   
     </header>
 
-<form action="/form">
 
-  <label for="name">Pone tu nombre</label>
-  <input type="text" id="name" name="name">
+<div class="container">
 
-</form>
+  <h1>Si escribis aca me llega un mail</h1>
+  <h3>Sí, un mail como si esto fuera 2003</h3>
+  
+  <form class="comment-form" action="https://formspree.io/f/xvoveawl" method="POST">
+      
+      <label class="mb">Nombre:</label>
+      <input type="text" name="name" id="name" class="mb">
+      <label class="mb">Email:</label>
+      <input type="email" name="_replyto" id="email" class="mb">
+      <label class="mb">Mensaje:</label>
+      <textarea name="message" id="message" cols="30" rows="10" maxlength="500" class="mb"></textarea>
+      
+      <button type="submit" class="mb">enviar</button>
+  </form>
 
- 
+  <hr>
 
+
+
+</div>
  
   <%- include('partials/footer') %>
 </body>

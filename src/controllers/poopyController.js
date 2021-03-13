@@ -31,29 +31,7 @@ const controller = {
 	},
 	poopyStore: (req, res) => {
 
-        // Sumo 1 a los que pasaron el desafio
-		let userFinalData = {
-            poopy: "Poopy Resuelto"
-        };
-        storeVisitor(userFinalData);
-
-        // saco la cuenta de cuantos lo resolvieron
-
-        let all = getAllVisitors();
-
-        let allPoopy = ""
-
-        for (let i = 0; i < all.length; i++){
-            if(all[i].poopy){
-                allPoopy ++
-            } else {
-                // console.log("no hay poopys");
-            }
-        }
-
-        // console.log("todos los Poopy", allPoopy );
-
-
+        
 	// Make a request for a user with a given ID
         axios.get('https://rickandmortyapi.com/api/character/244')
         .then(function (response) {
@@ -61,7 +39,7 @@ const controller = {
         let episodeQty = response.data.episode.length
 
         if (req.body.episodes == episodeQty){
-            res.render('hooray01', {allPoopy})
+            res.render('hooray01' )
         } else {
             res.render('wrong_answer', {pista: "RTFM! Si, hay que leer la Doc de la API"})
         }
@@ -77,37 +55,16 @@ const controller = {
                     
 		
     },
+
     span: (req, res) => {
-
-        let all = getAllVisitors();
-
-        let allSpan = ""
-
-        for (let i = 0; i < all.length; i++){
-            if(all[i].span){
-                allSpan ++
-            } else {
-                
-            }
-        }
-     
-
-        res.render('span', {allSpan})
+        res.render('span')
     },
-    spanStore: (req, res) => {
 
-        let userFinalData = {
-            span: "Span Resuelto"
-        };
-        storeVisitor(userFinalData);
+    spanStore: (req, res) => {
         
         let success = {
             status: 200,
             traduccion: "ganaste",
-            you_win:{
-                second_code: 68,
-                message: "SAVE YOUR CODE FOR LATER"
-            },
             keyword: "SuckiT",
             next_test: "Family Game",
             ver: "https://www.youtube.com/watch?v=Na8rqq47gi0&ab_channel=Typhlosion4President",
@@ -148,47 +105,18 @@ const controller = {
         
     },
     mario: (req, res) => {
-        
-        // suma una resolvida
-        let userFinalData = {
-            mario: "Mario Resuelto"
-        };
-        storeVisitor(userFinalData);
-
-        // busco todas las veces que se resolvio un Mario
-        let all = getAllVisitors();
-
-        let allMario = ""
-
-        for (let i = 0; i < all.length; i++){
-            if(all[i].mario){
-                allMario ++
-            } 
-        }
-        
-        
 
         if(req.query.search_query == "53"){
 
-            res.render('hooray02', {allMario})
+            res.render('hooray02')
         } else {
             res.render('wrong_answer')
         }
-	
-
     },
+
     simpson: (req, res) => {
-              
-        let all = getAllVisitors();
-
-        let allSimpson = ""
-
-        for (let i = 0; i < all.length; i++){
-            if(all[i].simpson){
-                allSimpson ++
-            } 
-        }
-            res.render('simpson', {allSimpson})
+       
+        res.render('simpson')
     },
     simpsonStore: (req, res) => {
 
@@ -203,24 +131,7 @@ const controller = {
             && req.body.simpquiz09 == "MagicPinball"
             && req.body.simpquiz10 == "SpinalTap"){
 
-                let userFinalData = {
-                    simpson: "Simpson Resuelto"
-                };
-                storeVisitor(userFinalData);
-
-                 // busco todas las veces que se resolvio un Mario
-                let all = getAllVisitors();
-
-                let allUltimate = ""
-
-                for (let i = 0; i < all.length; i++){
-                    if(all[i].ultimate){
-                        allUltimate ++
-                    } 
-                }
-        
-
-            res.render("hooray03", {allUltimate})
+            res.render("hooray03")
 
         }else{
 
@@ -231,23 +142,6 @@ const controller = {
     ultimate:  (req, res) => {
   
         if(req.body.ultimate == "42"){
-
-            let userFinalData = {
-                ultimate: "Ultimate Resuelto"
-            };
-            storeVisitor(userFinalData);
-
-                // busco todas las veces que se resolvio un Mario
-                let all = getAllVisitors();
-
-                let allUltimate = ""
-
-                for (let i = 0; i < all.length; i++){
-                    if(all[i].ultimate){
-                        allUltimate ++
-                    } 
-                }
-
             res.render('ultimate')
         } else {
             res.send('Perdiste')
@@ -269,7 +163,7 @@ const controller = {
     },
     violet: (req, res) => {
 
-        res.send("lo resolviste!!! bravoooo")
+        res.render("violet")
     },
     amarillo: (req, res) => {
 
@@ -307,39 +201,40 @@ const controller = {
     },
 	form: (req, res) => {
         // busco todas las veces que se resolvio un Mario
-        let all = getAllVisitors();
+        // let all = getAllVisitors();
 
-        let allPoopy = ""
-        let allSpan = ""
-        let allMario = ""
-        let allSimpson = ""
-        let allUltimate = ""
+        // let allPoopy = ""
+        // let allSpan = ""
+        // let allMario = ""
+        // let allSimpson = ""
+        // let allUltimate = ""
 
-        for (let i = 0; i < all.length; i++){
-            if(all[i].poopy){
-                allPoopy ++
-            } else if(all[i].span){
-                allSpan ++
-            } else if(all[i].mario){
-                allMario ++
-            } else if(all[i].simpson){
-                allSimpson ++
-            } 
-            else if(all[i].ultimate){
-                allUltimate ++
-            } 
-        }
+        // for (let i = 0; i < all.length; i++){
+        //     if(all[i].poopy){
+        //         allPoopy ++
+        //     } else if(all[i].span){
+        //         allSpan ++
+        //     } else if(all[i].mario){
+        //         allMario ++
+        //     } else if(all[i].simpson){
+        //         allSimpson ++
+        //     } 
+        //     else if(all[i].ultimate){
+        //         allUltimate ++
+        //     } 
+        // }
 
         
-        let results = {
-            poopy: allPoopy,
-            span: allSpan,
-            mario: allMario,
-            simpson: allSimpson,
-            ultimate: allUltimate
-        }
+        // let results = {
+        //     poopy: allPoopy,
+        //     span: allSpan,
+        //     mario: allMario,
+        //     simpson: allSimpson,
+        //     ultimate: allUltimate
+        // }
 
-		res.send(results)
+		// res.send(results)
+        res.render('form')
 	}
 
 }

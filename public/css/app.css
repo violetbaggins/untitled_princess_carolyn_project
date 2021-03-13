@@ -59,7 +59,10 @@ button{
 }
 
 a{
-    color:cadetblue;
+    color:rgb(54, 150, 134);
+}
+a:hover{
+    color:rgb(43, 143, 209);
 }
 footer a{
     color: moccasin;
@@ -88,6 +91,9 @@ iframe{
 }
 .amarillo{
     background-color: #fcba44;
+}
+.violet{
+    background-color: #9458af;
 }
 
 
@@ -172,9 +178,37 @@ iframe{
 }
 .opcion-1, .opcion-2{
     padding: 20px;
-    border: 1px solid red;
 }
 
+/* mensajes FORM email */
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form input{
+
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.form textarea{
+
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.form button{
+
+    display: block;
+    width: 100%;
+    margin-left: 8px;
+}
+.form label{
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
 
 /* view: comments */
 .mb{

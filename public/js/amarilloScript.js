@@ -32,11 +32,11 @@ document.addEventListener('mousemove', function (e){
   let b = Math.round(360 * r)
 
   body.style.backgroundImage =  `linear-gradient(to right, hsl(${b}, 100%, 71%) , hsl(${b-x}, 100%, 71%))`
-  console.log("valor de B", b);
+  
 
   if( b > 10 && b < 25){
     instrucciones.style.display = "block"
-    instrucciones.innerHTML = "<h1>Aca estan!!! </h1><ul><li>Dentro de la página hay 3 listas escondidas.</li><li>Cada una pertenece a una serie o saga.</li><li>Escribí la primer letra del titulo de cada una de ellas.</li><li>para que funcione las tenes que poner en orden alfabetico</li><li>Hint: capaz tambien es una marca 🤷‍♀️</li></ul>"
+    instrucciones.innerHTML = "<h1>Aca estan!!! </h1><ul><li>Dentro de la página hay 3 listas escondidas.</li><li>Cada una pertenece a una serie o saga.</li><li>El codigo para resolver este desafio es la primer letra del titulo de cada una de ellas</li><li>O sea, si la serie es South Park escribis la S.</li><li>Al final te van a quedar 3 letras.</li><li>Para que funcione las tenes que poner en orden alfabetico</li><li>Hint: capaz tambien es una marca 🤷‍♀️</li></ul>"
   } else {
     instrucciones.style.display = "none"
     instrucciones.innerHTML = ""
