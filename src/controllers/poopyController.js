@@ -4,21 +4,6 @@ const axios = require('axios');
 const fs = require('fs');
 const db = require('../database/models')
 
-const visitorsFilePath = __dirname + '/../data/visitors.json';
-const visitors = JSON.parse(fs.readFileSync(visitorsFilePath, 'utf-8'));
-
-function getAllVisitors () {
-	let visitorsFileContent = fs.readFileSync(visitorsFilePath, 'utf-8');
-	let finalVisitors = visitorsFileContent == '' ? [] : JSON.parse(visitorsFileContent); 
-	return finalVisitors;
-}
-
-
-function storeVisitor (newVisitorData) {
-	let allVisitors = getAllVisitors();
-	allVisitors.push(newVisitorData);
-	fs.writeFileSync(visitorsFilePath, JSON.stringify(allVisitors, null, ' '));
-}
 
 
 const controller = {
