@@ -3,10 +3,7 @@
 <!-- Include Head -->
 <%- include('partials/head', {title: 'Tinder Code Challenge'}) %>
 <body>
-  <header>
-    <!-- Ah pero mira que curiose resultaste, tranqui por ahora no vas a encontrar nada aca -->
-       
-    </header>
+
 
 <div class="container">
   <div class="">
@@ -23,14 +20,21 @@
   </div>
 
   <div class="">
-    <h4>Ahora si, para entrar en los desafios abrí la puerta 🚪</h4>
-    <h2>Speak friend and enter</h2>
-    <!-- Queres una pista? Ya te pones a ver LOTR a ver si aprendes algo. Y si te da mucha paja, bueno se escribe parecido a la fruta que se usa para tomar vino 😋 Seria algo como esto en ingles: (🍉 - 💧) -->
+    <h2>Primero escribi tu nombre</h2>
+    <h3>Si no escribis nada, se te asignara uno.</h3>
+    
 
     <form action="/pruebas" method="POST" enctype="application/json">
+    
+        <input type="text" name="username">       
+        <br>
+
+        <h4>Ahora si, para entrar en los desafios abrí la puerta 🚪</h4>
+        <h2>Speak friend and enter</h2>
+         <!-- Queres una pista? Ya te pones a ver LOTR a ver si aprendes algo. Y si te da mucha paja, bueno se escribe parecido a la fruta que se usa para tomar vino 😋 Seria algo como esto en ingles: (🍉 - 💧) -->
         <input type="text" name="word">
-        
         <button type="submit">enviar</button>
+
     </form>
   </div>
   <br>

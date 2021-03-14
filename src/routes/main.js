@@ -29,11 +29,10 @@ router.get('/',  mainController.home);
 
 
 // pruebas
-router.post('/pruebas',  pruebasController.pruebasStore);
-router.get('/solong', pruebasController.solong);
+router.post('/pruebas',  poopyController.pruebasStore);
+router.get('/solong', poopyController.solong);
 
 //poopy
-router.get('/poopy',  poopyController.poopy);
 router.post('/poopy', poopyController.poopyStore);
 
 //span
@@ -65,6 +64,9 @@ router.get('/javascript',  poopyController.javascript);
 
 // from Javascript
 router.get('/violet',  poopyController.violet);
+
+//from violet o Amarillo answer
+router.get('/graciastotales', poopyController.totales)
 
 //from amarillo / comments.ejs
 router.post('/comments',  poopyController.comments);

@@ -3,17 +3,51 @@
 const axios = require('axios');
 const fs = require('fs');
 const db = require('../database/models')
+const sequelize = db.sequelize;
 
+let fakename = ["Max Power", "Booby Curvas", "Pechugas Larú", "Cosme Fulanito", "Homero Thompson", "Cazaputas42", "Edna K", "nombre generado por computadora"]
 
 
 const controller = {
+    	
+	pruebasStore: (req, res) => {
+		
+		let answer = req.body.word
+		let username = req.body.username
 
-	poopy:(req, res) => {
-        
-        res.render('poopy')
-	
+		if (!username){
+			 username = fakename[Math.floor(Math.random() * fakename.length)]
+		}
 
+		if (answer.toLowerCase() == "mellon"){
+
+            db.User.create({
+                name: username,
+            })
+            .then(name => {
+                
+                let username = name.dataValues.name
+                req.session.user = name.dataValues.id
+                console.log(req.session.user);
+                res.render('poopy', {username});
+                // res.send('Comentario enviado');
+            })
+            .catch(error => console.log(error));    
+
+            db.User.findOne
+
+          
+		}else{
+
+			res.render('wrong_answer', {pista: "Es del Señor de los Anillos. Preguntale a tu amigo nerd"})
+		}
+
+		
+    },
+    solong: (req, res) => {
+		res.render("quitter");
 	},
+
 	poopyStore: (req, res) => {
 
         
@@ -24,7 +58,24 @@ const controller = {
         let episodeQty = response.data.episode.length
 
         if (req.body.episodes == episodeQty){
-            res.render('hooray01' )
+
+            db.User.update({
+                desafio01: 50
+            },
+            {
+                where: {
+                    id: req.session.user
+                }
+            }
+            )
+            .then(result => {
+                console.log(result);
+                req.session.desafio01 = 50
+                res.render('hooray01' )
+            })
+            .catch(error => console.log(error));
+           
+            // guardar que paso "desafio01" en DB
         } else {
             res.render('wrong_answer', {pista: "RTFM! Si, hay que leer la Doc de la API"})
         }
@@ -72,7 +123,7 @@ const controller = {
             test: {
                 question: "In which world & level do you get the boot?",
                 warning: "No hyphens in answer",
-                answer: "https://result310516842.herokuapp.com/marioresults?search_query={answer}"
+                answer: "https://correcachetescorre.herokuapp.com/marioresults?search_query={answer}"
             },
             your_face: "🤔",
             Up: "ArrowUp",
@@ -83,17 +134,48 @@ const controller = {
         }
 
         if (req.body.spanword == "SuckiT"){
-            res.send(success)
+            
+
+            // guardar que paso "desafio02" en DB
+            db.User.update({
+                desafio02: 30
+            },
+            {
+                where: {
+                    id: req.session.user
+                }
+            }
+            )
+            .then(result => {
+                                
+                res.send(success)
+            })
+            .catch(error => console.log(error));
         } else {
             res.send("Try again")
         }
         
     },
     mario: (req, res) => {
-
+        
         if(req.query.search_query == "53"){
-
-            res.render('hooray02')
+            
+            // guardar que paso "desafio03" en DB
+            
+            db.User.update({
+                desafio03: 60
+            },
+            {
+                where: {
+                    id: req.session.user
+                }
+            }
+            )
+            .then(result => {
+                                
+                res.render('hooray02')
+            })
+            .catch(error => console.log(error));
         } else {
             res.render('wrong_answer')
         }
@@ -116,7 +198,22 @@ const controller = {
             && req.body.simpquiz09 == "MagicPinball"
             && req.body.simpquiz10 == "SpinalTap"){
 
-            res.render("hooray03")
+                // guardar que paso "desafio04" en DB
+                db.User.update({
+                    desafio04: 100
+                },
+                {
+                    where: {
+                        id: req.session.user
+                    }
+                }
+                )
+                .then(result => {
+                    
+                    res.render("hooray03")
+                 
+                })
+                .catch(error => console.log(error));
 
         }else{
 
@@ -127,7 +224,23 @@ const controller = {
     ultimate:  (req, res) => {
   
         if(req.body.ultimate == "42"){
-            res.render('ultimate')
+
+            // guardar que paso "desafio05" en DB
+            db.User.update({
+                desafio05: 20
+            },
+            {
+                where: {
+                    id: req.session.user
+                }
+            }
+            )
+            .then(result => {
+                
+                res.render('ultimate')
+             
+            })
+            .catch(error => console.log(error));
         } else {
             res.send('Perdiste')
         }
@@ -145,10 +258,27 @@ const controller = {
     javascript: (req, res) => {
 
         res.render("noscript")
+        
     },
     violet: (req, res) => {
-
-        res.render("violet")
+        
+        // guardar que paso "desafio07" en DB
+        db.User.update({
+            desafio07: 150
+        },
+        {
+            where: {
+                id: req.session.user
+            }
+        }
+        )
+        .then(result => {
+            
+            res.render("violet")
+         
+        })
+        .catch(error => console.log(error));
+        
     },
     amarillo: (req, res) => {
 
@@ -163,12 +293,40 @@ const controller = {
             if (answer.toLowerCase() == "bgh"){
             
                 // res.redirect('/poopy');
-                res.render("comments")
+                
+                // guardar que paso "desafio06" en DB
+                db.User.update({
+                    desafio06: 40
+                },
+                {
+                    where: {
+                        id: req.session.user
+                    }
+                }
+                )
+                .then(result => {
+                    
+                    res.render("comments")
+                 
+                })
+                .catch(error => console.log(error));
+
             }else{
                 res.render('wrong_answer', {pista: "reliquias, espadas y episodios"})
             }
         
             
+    },
+    totales: (req, res) =>{
+
+        db.User.findByPk(req.session.user)
+        .then(result => {
+
+                res.render("totales", {result})
+            }
+
+        )
+        .catch(error => console.log(error));
     },
     comments: (req, res) => {
             
@@ -185,40 +343,7 @@ const controller = {
         
     },
 	form: (req, res) => {
-        // busco todas las veces que se resolvio un Mario
-        // let all = getAllVisitors();
-
-        // let allPoopy = ""
-        // let allSpan = ""
-        // let allMario = ""
-        // let allSimpson = ""
-        // let allUltimate = ""
-
-        // for (let i = 0; i < all.length; i++){
-        //     if(all[i].poopy){
-        //         allPoopy ++
-        //     } else if(all[i].span){
-        //         allSpan ++
-        //     } else if(all[i].mario){
-        //         allMario ++
-        //     } else if(all[i].simpson){
-        //         allSimpson ++
-        //     } 
-        //     else if(all[i].ultimate){
-        //         allUltimate ++
-        //     } 
-        // }
-
         
-        // let results = {
-        //     poopy: allPoopy,
-        //     span: allSpan,
-        //     mario: allMario,
-        //     simpson: allSimpson,
-        //     ultimate: allUltimate
-        // }
-
-		// res.send(results)
         res.render('form')
 	}
 

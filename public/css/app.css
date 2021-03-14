@@ -32,6 +32,7 @@ input{
     padding: 5px;
     box-shadow: -2px 3px rgb(65, 65, 65);
     margin: 0 5px;
+    outline: none;
 }
 textarea{
     border: 1px dashed rgb(65, 65, 65);
@@ -44,6 +45,7 @@ textarea{
     padding: 10px;
     box-shadow: -2px 3px rgb(65, 65, 65);
     margin: 0 5px;
+    outline: none;
 }
 button{
     border: 1px solid black;
@@ -56,6 +58,7 @@ button{
     color:black;
     padding: 5px;
     box-shadow: -2px 3px black;
+    outline: none;
 }
 
 a{
@@ -94,8 +97,12 @@ iframe{
 }
 .violet{
     background-color: #9458af;
+    color: ghostwhite;
 }
 
+.violet a {
+    color: blanchedalmond;
+}
 
 .caja{
     border-top: 3px dashed black;

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'The answer'}) %>
+<body>
+
+<div class="container">
+
+    <% if (locals.user){ %> 
+        <% let total = result.desafio01 + result.desafio02 + result.desafio03 + result.desafio04 + result.desafio05 + result.desafio06 + result.desafio07 %> 
+        <p>your total score is: <%= total %></p>
+    <% } else { %> 
+        <p>NO hay usuario</p>
+    <% } %> 
+   
+   
+</div>
+
+<%- include('partials/footer') %>
+
+</body>
+</html>
