@@ -7,11 +7,38 @@
 <div class="container">
 
     <% if (locals.user){ %> 
-        <% let total = result.desafio01 + result.desafio02 + result.desafio03 + result.desafio04 + result.desafio05 + result.desafio06 + result.desafio07 %> 
-        <p>your total score is: <%= total %></p>
+        <!-- busca el resultado del usuario que lo esta usando -->
+        <% result.forEach( user => {%> 
+            <% if (user.id == locals.user) {%>
+                <h1>Feicitaciones <span class="nombre"><%= user.name %></span></h1>
+                <% let total = user.desafio01 + user.desafio02 + user.desafio03 + user.desafio04 + user.desafio05 + user.desafio06 + user.desafio07 %> 
+                <h3>your total score is: <%= total %></h3>
+            <% }%> 
+        <% })%> 
+        <br>
+        <!-- MUestra todos los otros usuarios -->
+
+        
+        <h2>Comparate con el resto, dale, yo se que querias saber*</h2>
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Puntaje</th>
+            </tr>
+            <% result.forEach( user => {%> 
+                <tr>
+                    <th><%= user.name %></th>
+                    <% let total2 = user.desafio01 + user.desafio02 + user.desafio03 + user.desafio04 + user.desafio05 + user.desafio06 + user.desafio07 %> 
+                    <th><%= total2 %></th>
+                </tr>
+            <% })%> 
+        </table>
+        <br>
+        <h6>* ya se no estan en orden, me dio paja hacerlo 🙄</h6>
     <% } else { %> 
-        <p>NO hay usuario</p>
+        <p>No se pueden mostrar los totales</p>
     <% } %> 
+
    
    
 </div>

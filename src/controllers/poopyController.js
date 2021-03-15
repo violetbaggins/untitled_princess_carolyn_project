@@ -319,7 +319,7 @@ const controller = {
     },
     totales: (req, res) =>{
 
-        db.User.findByPk(req.session.user)
+        db.User.findAll()
         .then(result => {
 
                 res.render("totales", {result})
