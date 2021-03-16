@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'The answer'}) %>
+<body>
+
+<div class="container pepinito">
+
+  
+         <!-- MUestra todos los otros usuarios -->
+      
+        <h2>Usuarios</h2>
+        <br>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>DESAFIO 01</th>
+                <th>DESAFIO 02</th>
+                <th>DESAFIO 03</th>
+                <th>DESAFIO 04</th>
+                <th>DESAFIO 05</th>
+                <th>DESAFIO 06</th>
+                <th>DESAFIO 07</th>
+            </tr>
+            <% result.forEach( user => {%> 
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.name %></td>
+                    <td><%= user.desafio01 %></td>
+                    <td><%= user.desafio02 %></td>
+                    <td><%= user.desafio03 %></td>
+                    <td><%= user.desafio04 %></td>
+                    <td><%= user.desafio05 %></td>
+                    <td><%= user.desafio06 %></td>
+                    <td><%= user.desafio07 %></td>
+                </tr>
+            <% })%> 
+        </table>
+        <br>
+        <h2>Comentarios</h2>
+        <br>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>NOMBRE</th>
+                <th>EMAIL</th>
+                <th>COMENTARIO</th>
+            </tr>
+            <% comentarios.forEach( comment => {%> 
+                <tr>
+                    <td><%= comment.id %></td>
+                    <td><%= comment.name %></td>
+                    <td><%= comment.email %></td>
+                    <td><%= comment.comment %></td>
+                </tr>
+            <% })%> 
+        </table>
+  
+        
+
+   
+   
+</div>
+
+<%- include('partials/footer') %>
+
+</body>
+</html>

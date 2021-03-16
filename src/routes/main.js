@@ -50,7 +50,7 @@ router.post('/simpson', poopyController.simpsonStore);
 router.post('/ultimate',  poopyController.ultimate);
 
 //from ultimate.ejs
-// router.post('/pepinito',  poopyController.pepinito);
+router.get('/pepinito',  poopyController.pepinito);
 
 //from pepinito
 router.get('/gladiola',  poopyController.gladiola);

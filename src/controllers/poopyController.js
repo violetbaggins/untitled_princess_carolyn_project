@@ -245,11 +245,6 @@ const controller = {
             res.send('Perdiste')
         }
     },
-   /*  pepinito: (req, res) => {
-
-
-
-    }, */
 
     gladiola: (req, res) => {
 
@@ -319,9 +314,14 @@ const controller = {
     },
     totales: (req, res) =>{
 
-        db.User.findAll()
+        db.User.findAll({
+            attributes: [[db.sequelize.literal('id'), 'id'],[db.sequelize.literal('name'), 'name'],[db.sequelize.literal('SUM(desafio01 + desafio02 + desafio03 + desafio04 + desafio05 + desafio06 + desafio07)'), 'total']],
+            group : ['User.id'],
+            raw: true,
+            order: sequelize.literal('total DESC')
+          })
         .then(result => {
-
+                // res.send(result)
                 res.render("totales", {result})
             }
 
@@ -337,7 +337,7 @@ const controller = {
         })
         .then(productSaved => {
             
-            res.send('Comentario enviado');
+            res.redirect('/graciastotales');
         })
         .catch(error => console.log(error));     
         
@@ -345,7 +345,30 @@ const controller = {
 	form: (req, res) => {
         
         res.render('form')
-	}
+	},
+     pepinito: (req, res) => {
+
+        let usuarios = 
+             db.User.findAll({
+             raw: true,
+             order: sequelize.literal('id DESC')
+           })
+        
+        let comentarios = db.Comment.findAll()
+
+        Promise.all([usuarios, comentarios])
+
+         .then(function([usuarios, comentarios]) {
+                
+                // res.send(result)
+                res.render('pepinito', {result : usuarios, comentarios: comentarios})
+             }
+ 
+         )
+         .catch(error => console.log(error));
+ 
+ 
+     }
 
 }
 

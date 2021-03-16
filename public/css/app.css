@@ -95,6 +95,9 @@ iframe{
 .amarillo{
     background-color: #fcba44;
 }
+.amarillo a {
+    color: #5c2b74;
+}
 .violet{
     background-color: #9458af;
     color: ghostwhite;
@@ -236,14 +239,49 @@ iframe{
 }
 
 table{
-    border: dashed  0.5px black;
+    border-collapse: collapse;
     width: 100%;
-    text-align: left;
 }
+table td, table th{
+    border: 1px solid rgb(199, 199, 199);
+    padding: 8px;
+}
+table tr:nth-child(even){background-color: #f2f2f2;}
+table tr:hover {background-color: lightskyblue;}
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color:salmon;
+    color: white;
+  }
+
 
 .nombre{
     color:salmon;
 }
+
+.pepinito{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.pepinito table{
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+.pepinito table td, .pepinito table th{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+.pepinito table tr:nth-child(even){background-color: #f2f2f2;}
+
+.pepinito table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
 
 @media (max-width: 480px){
 

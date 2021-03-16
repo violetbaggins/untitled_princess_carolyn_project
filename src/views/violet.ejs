@@ -25,9 +25,14 @@
   <h3>Lo podes hacer aca ↓</h3>
   <form class="comment-form" action="/comments" method="POST" enctype="application/json">
      
-      <input type="text" name="name" id="name" class="mb">
-      <input type="email" name="email" id="email" class="mb">
-      <textarea name="comment" id="comment" cols="30" rows="10" maxlength="500" class="mb"></textarea>
+    <label class="mb">Nombre:</label>
+    <input type="text" name="name" id="name" class="mb">
+    
+    <label class="mb">Email:</label>
+    <input type="email" name="email" id="email" class="mb">
+    
+    <label class="mb">Comentario:</label>
+    <textarea name="comment" id="comment" cols="30" rows="10" maxlength="500" class="mb"></textarea>
       
       <button type="submit" class="mb">enviar</button>
   </form>

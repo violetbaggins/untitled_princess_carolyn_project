@@ -10,36 +10,47 @@
         <!-- busca el resultado del usuario que lo esta usando -->
         <% result.forEach( user => {%> 
             <% if (user.id == locals.user) {%>
-                <h1>Feicitaciones <span class="nombre"><%= user.name %></span></h1>
-                <% let total = user.desafio01 + user.desafio02 + user.desafio03 + user.desafio04 + user.desafio05 + user.desafio06 + user.desafio07 %> 
-                <h3>your total score is: <%= total %></h3>
+                <h1>✨Felicitaciones <span class="nombre"><%= user.name %> ✨</span></h1>
+              
+                <h2>your total score is: <%= user.total %></h2>
             <% }%> 
         <% })%> 
         <br>
         <!-- MUestra todos los otros usuarios -->
 
         
-        <h2>Comparate con el resto, dale, yo se que querias saber*</h2>
+        <h2>Comparate con el resto, dale, yo se que querias saber</h2>
+        <br>
         <table>
             <tr>
-                <th>Nombre</th>
-                <th>Puntaje</th>
+                <th>POSICION</th>
+                <th>NOMBRE</th>
+                <th>PUNTAJE</th>
             </tr>
-            <% result.forEach( user => {%> 
+            <% result.forEach( (user, index) => {%> 
                 <tr>
-                    <th><%= user.name %></th>
-                    <% let total2 = user.desafio01 + user.desafio02 + user.desafio03 + user.desafio04 + user.desafio05 + user.desafio06 + user.desafio07 %> 
-                    <th><%= total2 %></th>
+                    <td><%= index + 1 %></td>
+                    <% if (user.id == locals.user) {%>
+                        <td>⭐ <%= user.name %></td>
+                    <% } else {%>
+                        <td><%= user.name %></td>
+                    <% }%>
+                    <td><%= user.total %></td>
                 </tr>
             <% })%> 
         </table>
         <br>
-        <h6>* ya se no estan en orden, me dio paja hacerlo 🙄</h6>
     <% } else { %> 
-        <p>No se pueden mostrar los totales</p>
+        <h1>No se pueden mostrar los totales</h1>
+        <p>Capaz, porque en algun momento refrescaste,</p>
+        <p>o trataste de saltearte algun paso...</p>
+        <p>Yo que vos empiezo otra vez</p>
+        <p>No me gustaría no figurar en "EL RANKING"</p>
     <% } %> 
 
-   
+   <hr>
+   <h3>Si no dejaste mensaje, y mucho menos un mail podes seguirme en <a href="https://www.instagram.com/violetbaggins/">instagram</a></h3>
+   <p>Aunque lo tengo privado, pero manda un mensaje asi se de donde venis! 😬</p>
    
 </div>
 
