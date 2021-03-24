@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Include Head -->
-<%- include('partials/head', {title: 'you suck!'}) %>
-<body>
-<div class="container">
-  <h1>Wrong Answer</h1>
+<%- include('partials/head', {title: 'you suck!' }) %>
 
-  <h2>Nooooooo, la respuesta esta mal!</h2>
-  <h3>Una lástima Bro!</h3>
-  <hr>
-  <h4 class="pista">Te dejo una pista: <%= pista  %> </h4>
+  <body>
+    <div class="container">
+      <h1>Wrong Answer</h1>
 
-</div>
+      <h2>Nooooooo, la respuesta esta mal!</h2>
+      <h3>Una lástima Bro!</h3>
+      <hr>
+      <h4 class="pista">Te dejo una pista: <%= pista %>
+      </h4>
 
-  <%- include('partials/footer') %>
-</body>
+    </div>
+
+    <%- include('partials/footer') %>
+  </body>
+
 </html>

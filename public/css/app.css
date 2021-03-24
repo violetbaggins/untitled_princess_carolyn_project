@@ -87,7 +87,12 @@ h1{
     padding: 5px;
     flex-grow: 1;
 } 
-
+.pista{
+    font-family: monospace;
+    font-size: 1rem;
+    border: dashed 1px black;
+    padding: 3px;
+}
 iframe{
     width:560px;
     height: 315px;
@@ -150,6 +155,92 @@ iframe{
     cursor: pointer;
 }
 
+/* Vista Mario */
+.mario-body{
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    padding-top: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    line-height: 0.4rem;
+}
+.mario-container{
+    
+    font-family: monospace;
+    min-width: 600px;
+    max-width: 1200px;
+    padding: 5px;
+    flex-grow: 1;
+   /*  border: 1px red solid; */
+}
+
+.mario-input{
+    border: 1px dashed hotpink;
+    /* border-radius: 20px; */
+   /*  border-top-left-radius: 255px 15px;
+	border-top-right-radius: 15px 225px;
+	border-bottom-right-radius: 225px 15px;
+	border-bottom-left-radius:15px 255px; */
+    background-color: rgba(255, 255, 255, 1);
+    padding: 5px;
+    margin: 0 5px;
+    outline: none;
+    box-shadow: 0px 0px rgb(65, 65, 65);
+}
+.mario-button{
+    border: 1px solid dodgerblue;
+    border-radius: 20px;
+    border-top-left-radius: 255px 15px;
+	border-top-right-radius: 15px 225px;
+	border-bottom-right-radius: 225px 15px;
+	border-bottom-left-radius:15px 255px;
+    background-color:white;
+    color:dodgerblue;
+    padding: 5px;
+    box-shadow: 0px 0px black;
+    outline: none;
+}
+.txt-blue{
+    color: dodgerblue;
+}
+.txt-green{
+    color: limegreen;
+}
+.txt-pink{
+    color: hotpink;
+}
+.txt-pink a{
+    color: hotpink;
+    text-decoration: none;
+}
+
+.txt-pink a:hover{
+    color: purple;
+    text-decoration: underline;
+}
+.linea{
+    display: flex;
+    justify-content: left;
+    border: 1px solid blue;
+}
+.col1 {
+    
+    width:50%;
+    border: 1px solid green;
+}
+.col2{
+    width:20%;
+    border: 1px solid palevioletred;
+}
+.col3{
+    width:40%;
+    border: 1px solid purple;
+}
+
+
 /* view: amarillo */
 
 #cursor{
@@ -184,7 +275,6 @@ iframe{
 .opciones{
     display: flex;
     justify-content: space-around;
-
 }
 .opcion-1, .opcion-2{
     padding: 20px;
@@ -247,7 +337,7 @@ table td, table th{
     padding: 8px;
 }
 table tr:nth-child(even){background-color: #f2f2f2;}
-table tr:hover {background-color: lightskyblue;}
+table tr:hover {background-color: lemonchiffon;}
 table th {
     padding-top: 12px;
     padding-bottom: 12px;
@@ -255,6 +345,14 @@ table th {
     background-color:salmon;
     color: white;
   }
+
+table th.blue {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color:deepskyblue;
+    color: white;
+}
 
 
 .nombre{

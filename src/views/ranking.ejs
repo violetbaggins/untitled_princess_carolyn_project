@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'La tabla, la tabla'}) %>
+<body>
+
+<div class="container">
+
+        <!-- MUestra todos los otros usuarios -->
+
+        
+        <h2>Hay tabla</h2>
+        <br>
+        <table>
+            <tr>
+                <th>POSICION</th>
+                <th>NOMBRE</th>
+                <th>PUNTAJE</th>
+                <th>Minutos</th>
+
+            </tr>
+            <% result.forEach( (user, index) => {%> 
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= user.name %></td>
+                    <td><%= user.total %></td>
+                    <td><%= user.tiempo.toFixed(2) %></td>
+
+                </tr>
+            <% })%> 
+        </table>
+        <br>
+   
+
+   <hr>
+   <!-- <h3>Si no dejaste mensaje, y mucho menos un mail podes seguirme en <a href="https://www.instagram.com/violetbaggins/">instagram</a></h3>
+   <p>Aunque lo tengo privado, pero manda un mensaje asi se de donde venis! 😬 y si no, Telegram @violetbaggins </p> -->
+   <p>Ok, ya viste como esta el ranking, <a href="/">arrancamos?</a></p>
+</div>
+
+<%- include('partials/footer') %>
+
+</body>
+</html>

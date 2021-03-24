@@ -9,6 +9,20 @@ let fakename = ["Max Power", "Booby Curvas", "Pechugas Larú", "Cosme Fulanito",
 
 
 const controller = {
+
+    home: (req, res) => {
+
+        db.User.count()
+        .then(result => {
+                // res.send(result)
+                res.render("index", {result})
+            }
+
+        )
+        .catch(error => console.log(error));
+
+        // res.render('index');
+    },
     	
 	pruebasStore: (req, res) => {
 		
@@ -34,11 +48,11 @@ const controller = {
             })
             .catch(error => console.log(error));    
 
-            db.User.findOne
+            // db.User.findOne
 
           
 		}else{
-
+           
 			res.render('wrong_answer', {pista: "Es del Señor de los Anillos. Preguntale a tu amigo nerd"})
 		}
 
@@ -77,7 +91,16 @@ const controller = {
            
             // guardar que paso "desafio01" en DB
         } else {
-            res.render('wrong_answer', {pista: "RTFM! Si, hay que leer la Doc de la API"})
+
+            let pista
+
+            if ( req.body.episodes <= 0){
+                pista = "Posta pensaste que no iba a atajar este error. Messtrañaa"
+            } else {
+                pista = "id 244"
+            }
+
+            res.render('wrong_answer', {pista })
         }
         
         })
@@ -98,7 +121,7 @@ const controller = {
 
     spanStore: (req, res) => {
         
-        let success = {
+   /*      let success = {
             status: 200,
             traduccion: "ganaste",
             keyword: "SuckiT",
@@ -131,7 +154,7 @@ const controller = {
             Left: "ArrowLeft",
             Right: "ArrowRight",
 
-        }
+        } */
 
         if (req.body.spanword == "SuckiT"){
             
@@ -148,17 +171,29 @@ const controller = {
             )
             .then(result => {
                                 
-                res.send(success)
+                res.render('mario')
             })
             .catch(error => console.log(error));
         } else {
-            res.send("Try again")
+
+            let pista
+            if (req.body.spanword == "suckit" || req.body.spanword == "SUCKIT" ){
+                pista = "No esta mal, pero hay un temita con las mayusculas que no me agrada"
+            } else if (req.body.spanword == "suck it" || req.body.spanword == "Suck iT"  ){
+                pista = "mmm 🤔 me pa te sobran espacios"
+            } else {
+                pista = "BUE YA ES DEMASIADA AYUDA. En la consola: document.querySelectorAll('span')[i].innerText"
+            }
+
+
+
+            res.render("tryagain", {respuesta: req.body.spanword, pista: pista})
         }
         
     },
     mario: (req, res) => {
         
-        if(req.query.search_query == "53"){
+        if(req.body.marioanswer == 3){
             
             // guardar que paso "desafio03" en DB
             
@@ -177,7 +212,7 @@ const controller = {
             })
             .catch(error => console.log(error));
         } else {
-            res.render('wrong_answer')
+            res.render('wrong_answer', {pista: "A ver, son numeros podes probar"})
         }
     },
 
@@ -321,6 +356,8 @@ const controller = {
             order: sequelize.literal('total DESC')
           })
         .then(result => {
+           
+                
                 // res.send(result)
                 res.render("totales", {result})
             }
@@ -328,6 +365,42 @@ const controller = {
         )
         .catch(error => console.log(error));
     },
+
+    ranking: (req, res) =>{
+
+        db.User.findAll({
+            attributes: [[db.sequelize.literal('id'), 'id'],[db.sequelize.literal('name'), 'name'],[db.sequelize.literal('SUM(desafio01 + desafio02 + desafio03 + desafio04 + desafio05 + desafio06 + desafio07)'), 'total'],[db.sequelize.literal('createdAt'), 'inicio'],[db.sequelize.literal('updatedAt'), 'fin']],
+            group : ['User.id'],
+            raw: true,
+            order: sequelize.literal('total DESC'),
+            limit: 10
+          })
+        .then(response => {
+
+            
+
+            let result = response.map( user => {
+                
+                return {
+                    id: user.id,
+                    name: user.name,
+                    total: user.total,
+                    /* inicio: Date.parse(user.inicio),
+                    fin: Date.parse(user.fin) */
+                    tiempo: ((Date.parse(user.fin) - Date.parse(user.inicio))/1000)/60
+                  }
+            })
+
+            
+                console.log(result);
+                // res.send(result)
+                res.render("ranking", {result})
+            }
+
+        )
+        .catch(error => console.log(error));
+    },
+
     comments: (req, res) => {
             
         db.Comment.create({
@@ -368,6 +441,9 @@ const controller = {
          .catch(error => console.log(error));
  
  
+     },
+     marioPrueba: (req, res)=>{
+         res.render('mario')
      }
 
 }

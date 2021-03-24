@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     }
     const config = {
         tableName: 'comments',
-        timestamps: false, // buscará los campos createdAt/updatedAt
+        timestamps: true, // buscará los campos createdAt/updatedAt
         
     }
     const Model = sequelize.define(alias, columns, config);

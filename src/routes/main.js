@@ -23,10 +23,7 @@ const pruebasController = require('../controllers/pruebasController');
 const poopyController = require('../controllers/poopyController');
 
 // middleware
-
-
-router.get('/',  mainController.home);
-
+router.get('/',  poopyController.home);
 
 // pruebas
 router.post('/pruebas',  poopyController.pruebasStore);
@@ -40,7 +37,10 @@ router.get('/span',  poopyController.span);
 router.post('/span', poopyController.spanStore);
 
 //Mario results
-router.get('/marioresults',  poopyController.mario);
+router.get('/mario', poopyController.marioPrueba)
+router.post('/marioresults',  poopyController.mario);
+
+// VISTA DE PRUEBA MARIO
 
 //Simpson
 router.get('/simpson',  poopyController.simpson);
@@ -71,6 +71,8 @@ router.get('/graciastotales', poopyController.totales)
 //from amarillo / comments.ejs
 router.post('/comments',  poopyController.comments);
 
+// ranking
+router.get('/ranking', poopyController.ranking);
 
 // Pruebas para guardar datos
 router.get('/form', poopyController.form);

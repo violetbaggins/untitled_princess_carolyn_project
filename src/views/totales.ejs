@@ -8,11 +8,23 @@
 
     <% if (locals.user){ %> 
         <!-- busca el resultado del usuario que lo esta usando -->
-        <% result.forEach( user => {%> 
+        <% result.forEach( (user , index) => {%> 
             <% if (user.id == locals.user) {%>
                 <h1>✨Felicitaciones <span class="nombre"><%= user.name %> ✨</span></h1>
               
-                <h2>your total score is: <%= user.total %></h2>
+                <table>
+                    <tr>
+                        <th>POSICION</th>
+                        <th>NOMBRE</th>
+                        <th>PUNTAJE</th>
+                    </tr>
+                    <tr>
+                        <td><%= index + 1 %></td>
+                        <td>⭐ <%= user.name %></td>
+                        <td><%= user.total %></td>
+                    </tr>
+                   
+                </table>
             <% }%> 
         <% })%> 
         <br>
@@ -23,19 +35,23 @@
         <br>
         <table>
             <tr>
-                <th>POSICION</th>
-                <th>NOMBRE</th>
-                <th>PUNTAJE</th>
+                <th class="blue">POSICION</th>
+                <th class="blue">NOMBRE</th>
+                <th class="blue">PUNTAJE</th>
             </tr>
             <% result.forEach( (user, index) => {%> 
                 <tr>
-                    <td><%= index + 1 %></td>
-                    <% if (user.id == locals.user) {%>
-                        <td>⭐ <%= user.name %></td>
-                    <% } else {%>
-                        <td><%= user.name %></td>
-                    <% }%>
-                    <td><%= user.total %></td>
+                    <% if (index < 10){ %> 
+
+                        <td><%= index + 1 %></td>
+                        <% if (user.id == locals.user) {%>
+                            <td>⭐ <%= user.name %></td>
+                        <% } else {%>
+                            <td><%= user.name %></td>
+                        <% }%>
+                        <td><%= user.total %></td>
+
+                    <% } %> 
                 </tr>
             <% })%> 
         </table>

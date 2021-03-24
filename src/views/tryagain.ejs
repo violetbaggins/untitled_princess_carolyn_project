@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'you suck!' }) %>
+
+  <body>
+    <div class="container">
+       <h2>Pucha, te equivocaste!</h2>
+      <h3>Tu respuesta: <span class="nombre"><b><%= respuesta %></b></span></h3>
+      <hr>
+      <p>no te preocupes, siempre podes ir para atras 🦀 y probar de nuevo</p>
+      <p class="pista"><b>Te dejo una pista:</b> <%= pista %>
+      </p>
+
+    </div>
+
+    <%- include('partials/footer') %>
+  </body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Family Game'}) %>
+
+<body class="mario-body">
+
+  <div class="mario-container">
+
+   <p><span class="txt-blue">status: </span><span class="txt-green">200</span></p>
+   <p><span class="txt-blue">traducción: </span><span class="txt-pink">"ganaste!"</span></p>
+   <p><span class="txt-blue">keyword: </span><span class="txt-pink">"SuckiT"</span></p>
+   <p><span class="txt-blue">next_test: </span><span class="txt-pink">"Family Game"</span></p>
+   <p><span class="txt-blue">ver: </span><span class="txt-pink"><a href="https://www.youtube.com/watch?v=Na8rqq47gi0&ab_channel=Typhlosion4President">https://www.youtube.com/watch?v=Na8rqq47gi0&ab_channel=Typhlosion4President</a></span></p>
+   <p><span class="txt-blue">profesion: </span><span class="txt-pink">"plumber"</span></p>
+   <p><span class="txt-blue">search: </span><span class="txt-pink">"query"</span></p>
+   <!-- <p><span class="txt-blue">world: </span><span class="txt-pink">"5 - Sky Land"</span></p> -->
+   <p><span class="txt-blue">Question: </span><span class="txt-pink">"In which level do you get the boot?"</span></p>
+   <p><span class="txt-blue">query: </span><span class="txt-pink">"?t=2852"</span></p>
+   <p>
+     <span class="txt-blue">Answer: </span>
+      <form action="/marioresults" method="POST">
+        <input type="number" class="mario-input" name="marioanswer">
+        <button class="mario-button" type="submit">enviar</button>
+      </form>
+  </p>
+    
+  </div>
+  <%- include('partials/footer') %>
+</body>
+</html>

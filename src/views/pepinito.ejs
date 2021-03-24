@@ -22,6 +22,9 @@
                 <th>DESAFIO 05</th>
                 <th>DESAFIO 06</th>
                 <th>DESAFIO 07</th>
+                <th>createdAt</th>
+                <th>updatedAt</th>
+                <th>TIEMPO</th>
             </tr>
             <% result.forEach( user => {%> 
                 <tr>
@@ -34,6 +37,10 @@
                     <td><%= user.desafio05 %></td>
                     <td><%= user.desafio06 %></td>
                     <td><%= user.desafio07 %></td>
+                    <td><%= user.createdAt %></td>
+                    <td><%= user.updatedAt %></td>
+                    <td><%= (((Date.parse(user.updatedAt) - Date.parse(user.createdAt))/1000)/60).toFixed(2) %></td>
+                    
                 </tr>
             <% })%> 
         </table>
@@ -43,9 +50,10 @@
         <table>
             <tr>
                 <th>ID</th>
-                <th>NOMBRE</th>
-                <th>EMAIL</th>
-                <th>COMENTARIO</th>
+                <th>nombre</th>
+                <th>email</th>
+                <th>comentario</th>
+                <th>fecha</th>
             </tr>
             <% comentarios.forEach( comment => {%> 
                 <tr>
@@ -53,6 +61,7 @@
                     <td><%= comment.name %></td>
                     <td><%= comment.email %></td>
                     <td><%= comment.comment %></td>
+                    <td><%= comment.createdAt %></td>
                 </tr>
             <% })%> 
         </table>
