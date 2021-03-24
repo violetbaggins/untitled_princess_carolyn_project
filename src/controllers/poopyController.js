@@ -350,15 +350,44 @@ const controller = {
     totales: (req, res) =>{
 
         db.User.findAll({
-            attributes: [[db.sequelize.literal('id'), 'id'],[db.sequelize.literal('name'), 'name'],[db.sequelize.literal('SUM(desafio01 + desafio02 + desafio03 + desafio04 + desafio05 + desafio06 + desafio07)'), 'total']],
+            attributes: [[db.sequelize.literal('id'), 'id'],[db.sequelize.literal('name'), 'name'],[db.sequelize.literal('SUM(desafio01 + desafio02 + desafio03 + desafio04 + desafio05 + desafio06 + desafio07)'), 'total'],[db.sequelize.literal('createdAt'), 'inicio'],[db.sequelize.literal('updatedAt'), 'fin']],
             group : ['User.id'],
             raw: true,
             order: sequelize.literal('total DESC')
           })
-        .then(result => {
-           
-                
-                // res.send(result)
+        .then(response => {
+
+            let result = response.map( user => {
+                let minutos = Math.round(((Date.parse(user.fin) - Date.parse(user.inicio))/1000)/60)
+
+                if (isNaN(minutos)){
+                    minutos = 0
+                }
+
+                return {
+                    id: user.id,
+                    name: user.name,
+                    total: (user.total + minutos)
+                  }
+            })
+
+            function compare(a, b) {
+                // Use toUpperCase() to ignore character casing
+                const userA = Number(a.total)
+                const userB = Number(b.total)
+              
+                let comparison = 0;
+                if (userA > userB) {
+                  comparison = -1;
+                } else if (userA < userB) {
+                  comparison = 1;
+                }
+                return comparison;
+              }
+              
+              result.sort(compare);
+
+        
                 res.render("totales", {result})
             }
 
@@ -373,26 +402,41 @@ const controller = {
             group : ['User.id'],
             raw: true,
             order: sequelize.literal('total DESC'),
-            limit: 10
+            limit: 20
           })
         .then(response => {
-
-            
+         
 
             let result = response.map( user => {
-                
+                let minutos = Math.round(((Date.parse(user.fin) - Date.parse(user.inicio))/1000)/60)
+
+                if (isNaN(minutos)){
+                    minutos = 0
+                }
                 return {
                     id: user.id,
                     name: user.name,
-                    total: user.total,
-                    /* inicio: Date.parse(user.inicio),
-                    fin: Date.parse(user.fin) */
-                    tiempo: ((Date.parse(user.fin) - Date.parse(user.inicio))/1000)/60
+                    total: (user.total + minutos)
                   }
             })
 
             
-                console.log(result);
+            function compare(a, b) {
+                // Use toUpperCase() to ignore character casing
+                const userA = Number(a.total)
+                const userB = Number(b.total)
+              
+                let comparison = 0;
+                if (userA > userB) {
+                  comparison = -1;
+                } else if (userA < userB) {
+                  comparison = 1;
+                }
+                return comparison;
+              }
+              
+              result.sort(compare);
+
                 // res.send(result)
                 res.render("ranking", {result})
             }
