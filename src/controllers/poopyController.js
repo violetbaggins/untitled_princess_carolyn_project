@@ -416,7 +416,7 @@ const controller = {
                 return {
                     id: user.id,
                     name: user.name,
-                    total: (user.total + minutos)
+                    total: Number(user.total) + Number(minutos)
                   }
             })
 
