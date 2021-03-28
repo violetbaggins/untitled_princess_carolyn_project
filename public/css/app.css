@@ -1,12 +1,83 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap'); */
 /* color code #fcba44  o mejor 255,220, 92*/
-*{
+
+:root {
+    --xvalue: 10; 
+  }
+
+
+*{  
     box-sizing: border-box;
 }
+
+.romper div *:nth-child(1){
+    transform: translateY(500px);
+    opacity: 0;
+    transition: all 1s;
+}
+
+.backwards {
+    -moz-transform: scale(1, -1);
+    -webkit-transform: scale(1, -1);
+    -o-transform: scale(1, -1);
+    -ms-transform: scale(1, -1);
+    transform: scale(1, -1);
+    text-shadow: 0.5em 0.5em 0 rgba(255,0,255,0.5), 
+    0 00.25em 0 rgba(0,255,255,0.5),
+     0 -0.3em 0 rgba(255,255,0,1);
+     text-decoration: line-through;
+     text-decoration-style: wavy;
+
+     animation: glitch 1000ms infinite;
+     transition: all 1s;
+}
+marquee{
+    color: white;
+}
+.backwards marquee{
+    -moz-transform: scale(0.8, -1);
+    -webkit-transform: scale(0.8, -1);
+    -o-transform: scale(0.8, -1);
+    -ms-transform: scale(0.8, -1);
+    transform: scale(0.8, -1);
+    font-size: 3rem;
+   opacity: 0.2;
+   color: black;
+}
+
+
+@keyframes glitch {
+    0%{
+        text-shadow: 0.5em 0.5em 0 rgba(255,0,255,0.5), 
+        0 00.25em 0 rgba(0,255,255,0.5),
+        -0.5em -0.3em 0 rgba(255,255,0,1);
+    } 
+    49%{
+        text-shadow: 0.5em 0.5em 0 rgba(255,0,255,0.5), 
+        0 00.25em 0 rgba(0,255,255,0.5),
+        -0.5em -0.3em 0 rgba(255,255,0,1);
+    }
+    50%{
+        text-shadow: 0.75em 0.25em 0 rgba(255,0,255,0.5), 
+        0.5em 00.50em 0 rgba(0,255,255,0.5),
+        0 -0.6em 0 rgba(255,255,0,1);
+    }
+    99%{
+        text-shadow: 0.75em 0.25em 0 rgba(255,0,255,0.5), 
+        0.5em 00.50em 0 rgba(0,255,255,0.5),
+        0 -0.6em 0 rgba(255,255,0,1);
+    }
+    100%{
+        text-shadow: 0.25em 0.75em 0 rgba(255,0,255,0.7), 
+        0 0.75em 0 rgba(0,255,255,0.3),
+        0.60em 0.3em 0 rgba(255,255,0,8);
+    }
+}
+
 body{
     margin: 0;
     padding: 0;
-    padding-top: 20px;
+    
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -61,6 +132,10 @@ button{
     outline: none;
 }
 
+.resbaladilla {
+    background: pink;
+}
+
 a{
     color:rgb(54, 150, 134);
 }
@@ -86,6 +161,7 @@ h1{
     max-width: 1200px;
     padding: 5px;
     flex-grow: 1;
+    margin-top: 20px;
 } 
 .pista{
     font-family: monospace;
@@ -381,6 +457,35 @@ table th.blue {
     color: white;
   }
 
+/* DVD screen */
+
+.bluescreen{
+    display: block;
+    background-color:blue;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 100;
+}
+
+.body-bluescreen{
+    margin: 0;
+    padding: 0 !important;
+    box-sizing: border-box;
+}
+
+.bluescreen img{
+    filter: invert(1);
+    position:absolute;
+    top: 0;
+    left:0;
+}
+
+
+/* ------------------------------------------------------------------------------------------ */
+  
 @media (max-width: 480px){
 
     .container{

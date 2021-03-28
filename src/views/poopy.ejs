@@ -2,10 +2,11 @@
 <html lang="en">
 <!-- Include Head -->
 <%- include('partials/head', {title: 'Mr Poopybutthole'}) %>
-<body>
+<body class="body-bluescreen{">
+  
  
 <div class="container">
-  
+
     <h1>Bienvenide <span class="nombre"><%= username %></span>, este es tu primer desafío - Rick and Morty</h1>
 
     <form action="/poopy" method="POST" enctype="application/json">
@@ -16,16 +17,21 @@
     </form>
     <br>
     <hr>
-
+    <button id="malisimo" class="malisimo">Malisimo esto, quiero que sea mas lindo! 😫</button>
     <br>
     <p>Por si no lo conoces (shame on you!)</p>
     <p>Te dejo una fotito</p>
     <img src="images/poopy_butthole_get.jpg" alt="hasta la temporada cuatro son seis pero no se en que momento de la serie estas leyendo esto, asi que te recomiendo consultar la API" title="En el alt esta la respuesta">
 
 </div>
- 
+  
+  <!-- Hay enserio desactivaste todo porque no era "bonito"? No aprendiste nada de la Resbaladilla super diverida? -->
+  <!-- Como castigo, perdiste la oportunidad de resolver ese acertijo, y con ello 50 puntos -->
+  <!-- pero, pero, pero las apariencias engañan. No te gusto el front, pero te animaste a decirlo -->
+  <!-- y eso no es poco, por eso si visitas /melaaguanto te doy 100pts -->
+  <!-- Al final te salio bien. si hubieses recargado la pagina, no te enterabas de esto -->
 
   <%- include('partials/footer') %>
-  <script src="../../js/script.js"></script>
+  <script src="../../js/dvd.js"></script>
 </body>
 </html>
