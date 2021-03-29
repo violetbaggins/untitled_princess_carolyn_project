@@ -388,7 +388,7 @@ const controller = {
                 return {
                     id: user.id,
                     name: user.name,
-                    total: Number(user.total) + Number(minutos)
+                    total: Number(user.total) - Number(minutos)
                   }
             })
 
@@ -437,7 +437,7 @@ const controller = {
                 return {
                     id: user.id,
                     name: user.name,
-                    total: Number(user.total) + Number(minutos)
+                    total: Number(user.total) - Number(minutos)
                   }
             })
 
