@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head', {title: 'El aguante'}) %>
+<body class="body-bluescreen{">
+  
+ 
+<div class="container">
+
+    <!-- // aca poner un reloj y que redireccione a Simpson en cuanto termine -->
+    <!-- 2 minutos de castigo en la cafeteria -->
+    <!-- cuando tu castigo termine seras redireccionado al siguiente desafio -->
+    <!-- hay formas de escapar, por supuesto -->
+    <!-- aca todo tiene un truco -->
+
+    <div class="warpzone">
+      <div class="timer">Castigado por <span id="time">00:60</span> segundos!</div>
+
+    </div>
+    
+   <!--  ******************************************************************************** -->
+   <!--  S E G U I R - D E S D E - A C A -->
+   <!--  ******************************************************************************** -->
+
+</div>
+<script>
+  let warpzone = document.querySelector('.warpzone')
+
+  function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+      setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+    if (--timer < 0) {
+        timer = duration;
+        // window.location.replace("/simpson");
+        
+        warpzone.innerHTML = `<img src="../../images/warp_zone.jpg" alt="">`
+    }
+}, 1000);
+}
+
+window.onload = function () {
+var fiveMinutes = 60,
+    display = document.querySelector('#time');
+startTimer(fiveMinutes, display);
+};
+</script>
+  
+
+  <%- include('partials/footer') %>
+  <script src="../../js/dvd.js"></script>
+</body>
+</html>

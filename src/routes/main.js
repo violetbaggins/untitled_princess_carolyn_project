@@ -32,12 +32,21 @@ router.get('/solong', poopyController.solong);
 //poopy
 router.post('/poopy', poopyController.poopyStore);
 
+//Viene de la pantalla del dvd
+router.get('/melaaguanto', poopyController.aguante);
+
+
 //span
 router.get('/span',  poopyController.span);
 router.post('/span', poopyController.spanStore);
 
 //Mario results
 router.get('/mario', poopyController.marioPrueba)
+
+//mario opcional
+router.get('/salondecastigo', poopyController.cafeteria)
+
+//respuesta al de mario
 router.post('/marioresults',  poopyController.mario);
 
 // VISTA DE PRUEBA MARIO

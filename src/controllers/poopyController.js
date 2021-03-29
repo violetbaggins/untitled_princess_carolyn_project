@@ -115,6 +115,23 @@ const controller = {
 		
     },
 
+    aguante: (req, res) => {
+        db.User.update({
+            desafio01: 100
+        },
+        {
+            where: {
+                id: req.session.user
+            }
+        }
+        )
+        .then(result => {
+                        
+            res.render('aguante' )
+        })
+        .catch(error => console.log(error));
+    },
+
     span: (req, res) => {
         res.render('span')
     },
@@ -191,6 +208,10 @@ const controller = {
         }
         
     },
+    cafeteria: (req, res) => {
+        res.render('cafeteria')
+    },
+
     mario: (req, res) => {
         
         if(req.body.marioanswer == 3){
@@ -367,7 +388,7 @@ const controller = {
                 return {
                     id: user.id,
                     name: user.name,
-                    total: (user.total + minutos)
+                    total: Number(user.total) + Number(minutos)
                   }
             })
 

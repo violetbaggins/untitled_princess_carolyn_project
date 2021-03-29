@@ -15,7 +15,7 @@ window.addEventListener('load', function () {
     botonDeMierda.addEventListener('click', () =>{
     
         // mostrar div bluescreen
-        body.innerHTML += `<div id="bluescreen" class="bluescreen"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/1280px-DVD_logo.svg.png" width="200px" alt="" id="dvdimg"></div>`
+        body.innerHTML = `<!-- Hay enserio desactivaste todo porque no era "bonito"? No aprendiste nada de la Resbaladilla super diverida? --><!-- Como castigo, perdiste la oportunidad de resolver ese acertijo, y con ello 50 puntos --><!-- pero, pero, pero las apariencias engañan. No te gusto el front, pero te animaste a decirlo --><!-- y eso no es poco, por eso si visitas /melaaguanto te doy 100pts --><!-- Al final te salio bien. si hubieses recargado la pagina, no te enterabas de esto --><div id="bluescreen" class="bluescreen"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/DVD_logo.svg/1280px-DVD_logo.svg.png" width="200px" alt="" id="dvdimg"></div>`
         
         // <a href="/">Volve a empezar por discriminador de un front pedorro</a><button id="stop" class="malisimo">Para para para!!!</button>
         

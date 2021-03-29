@@ -1,10 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap'); */
 /* color code #fcba44  o mejor 255,220, 92*/
 
-:root {
-    --xvalue: 10; 
-  }
-
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
 
 *{  
     box-sizing: border-box;
@@ -250,6 +247,7 @@ iframe{
     max-width: 1200px;
     padding: 5px;
     flex-grow: 1;
+    margin-left: 10px;
    /*  border: 1px red solid; */
 }
 
@@ -316,6 +314,11 @@ iframe{
     border: 1px solid purple;
 }
 
+.timer{
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
 
 /* view: amarillo */
 
