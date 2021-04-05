@@ -4,13 +4,6 @@ window.addEventListener('load', function () {
     let container = document.getElementsByClassName('container')
     
     let botonDeMierda = document.getElementById('malisimo');
-    
-
-  
-
-    
-
-    
 
     botonDeMierda.addEventListener('click', () =>{
     
@@ -27,14 +20,16 @@ window.addEventListener('load', function () {
         let bluescreen = document.getElementById("bluescreen")
         let btnStop = document.getElementById("stop")
         let dvdimg = document.getElementById("dvdimg")
-            dvdimg.style.left = 0
-            dvdimg.style.top = 0
+            dvdimg.style.left = `-10px`
+            dvdimg.style.top =  `-10px`
+
+            console.log("Left:", dvdimg.style.left);
         let moveX = 10
         let moveY = 10
 
         console.log("Andando");  
 
-        let intervalMove = setInterval(moveDVD, 100)
+        let intervalMove = setInterval(moveDVD, 50)
 
         function moveDVD() {
     
@@ -48,8 +43,7 @@ window.addEventListener('load', function () {
             
         }
 
-        if (parseInt(dvdimg.style.left) >= window.innerWidth - 205){
-            
+        if (parseInt(dvdimg.style.left) >= window.innerWidth - 210){
             moveX = -10
         }
 
@@ -70,7 +64,7 @@ window.addEventListener('load', function () {
             bluescreen.innerHTML += `<a href="/">Volve a empezar por discriminador de un front pedorro</a>`
         }) */
         
-
+        
     })
 
 })

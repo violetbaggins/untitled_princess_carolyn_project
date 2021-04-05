@@ -46,6 +46,13 @@ router.get('/mario', poopyController.marioPrueba)
 //mario opcional
 router.get('/salondecastigo', poopyController.cafeteria)
 
+// opciones
+router.get('/opcion4', poopyController.opcion4)
+router.get('/opcion3', poopyController.opcion3)
+router.get('/opcion2', poopyController.opcion2)
+router.get('/terminal', poopyController.terminal)
+
+
 //respuesta al de mario
 router.post('/marioresults',  poopyController.mario);
 

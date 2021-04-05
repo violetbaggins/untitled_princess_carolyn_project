@@ -130,7 +130,7 @@ button{
 }
 
 .resbaladilla {
-    background: pink;
+    background-color: pink;
 }
 
 a{
@@ -160,11 +160,14 @@ h1{
     flex-grow: 1;
     margin-top: 20px;
 } 
+
+
 .pista{
     font-family: monospace;
     font-size: 1rem;
     border: dashed 1px black;
     padding: 3px;
+    color: salmon;
 }
 iframe{
     width:560px;
@@ -318,7 +321,41 @@ iframe{
     font-family: 'Josefin Sans', sans-serif;
     text-transform: uppercase;
     font-size: 2rem;
+    text-align: center;
 }
+
+.warpzone-img{
+    position: relative
+}
+.warpzone-op1{
+    position: absolute;
+    /* background-color: brown; */
+    width: 60px;
+    height: 120px;
+    left: 70px;
+    bottom:65px;
+    cursor: pointer;
+}
+.warpzone-op2{
+    position: absolute;
+    /* background-color: brown; */
+    width: 60px;
+    height: 120px;
+    left: 185px;
+    bottom:65px;
+    cursor: pointer;
+}
+.warpzone-op3{
+    position: absolute;
+    /* background-color: brown; */
+    width: 60px;
+    height: 120px;
+    left: 306px;
+    bottom:65px;
+    cursor: pointer;
+}
+
+
 
 /* view: amarillo */
 

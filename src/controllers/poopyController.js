@@ -42,7 +42,7 @@ const controller = {
                 
                 let username = name.dataValues.name
                 req.session.user = name.dataValues.id
-                console.log(req.session.user);
+                console.log("console log de req.session.user", req.session.user);
                 res.render('poopy', {username});
                 // res.send('Comentario enviado');
             })
@@ -236,11 +236,74 @@ const controller = {
             res.render('wrong_answer', {pista: "A ver, son numeros podes probar"})
         }
     },
+    opcion4: (req, res) => {
+       
+        db.User.update({
+            desafio03: 100
+        },
+        {
+            where: {
+                id: req.session.user
+            }
+        }
+        )
+        .then(result => {
+                            
+            res.render('simpson')
+        })
+        .catch(error => console.log(error));
+    },
+    opcion3: (req, res) => {
+       
+        db.User.update({
+            desafio03: 100
+        },
+        {
+            where: {
+                id: req.session.user
+            }
+        }
+        )
+        .then(result => {
+                            
+            res.render('simpson')
+        })
+        .catch(error => console.log(error));
+    },
+    opcion2: (req, res) => {
+       
+        db.User.update({
+            desafio03: 100
+        },
+        {
+            where: {
+                id: req.session.user
+            }
+        }
+        )
+        .then(result => {
+                            
+            res.render('simpson')
+        })
+        .catch(error => console.log(error));
+    },
+
+    terminal: (req, res) => {
+
+        db.User.findByPk(req.session.user)
+            .then(result =>{
+                res.render('terminal', {result})
+                console.log("resultado findby PK: ", result);
+            })
+            .catch(error => console.log(error));
+       
+    },
 
     simpson: (req, res) => {
        
         res.render('simpson')
     },
+
     simpsonStore: (req, res) => {
 
         if(req.body.simpquiz01 == "GreenDay"
