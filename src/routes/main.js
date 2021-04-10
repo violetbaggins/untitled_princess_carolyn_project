@@ -65,7 +65,7 @@ router.post('/simpson', poopyController.simpsonStore);
 //from hooray03
 router.post('/ultimate',  poopyController.ultimate);
 
-//from ultimate.ejs
+//resultados para Pao
 router.get('/pepinito',  poopyController.pepinito);
 
 //from pepinito

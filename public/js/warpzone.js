@@ -15,13 +15,13 @@ function startTimer(duration, display) {
       timer = duration;
       // window.location.replace("/simpson");
       
-      warpzone.innerHTML = `<br><h1>La paciencia se aprecia</h1><p>Por eso vas a sumar 100pts y la opcion de elegir otro mundo</p><div class="warpzone-img"><a href="/opcion4"><div class="warpzone-op1"></div></a><a href="/opcion3"><div class="warpzone-op2"></div></a><a href="/opcion2"><div class="warpzone-op3"></div></a><img src="../../images/warp_zone.jpg" alt=""></div></div>`
+      warpzone.innerHTML = `<br><h1>La paciencia se aprecia</h1><p>Por eso tenes la opcion de elegir otro mundo</p><div class="warpzone-img"><a href="/opcion4"><div class="warpzone-op1"></div></a><a href="/opcion3"><div class="warpzone-op2"></div></a><a href="/opcion2"><div class="warpzone-op3"></div></a><img src="../../images/warp_zone.jpg" alt=""></div></div>`
   }
 }, 1000);
 }
 
 window.onload = function () {
-var fiveMinutes = 60,
+var fiveMinutes = 59,
   display = document.querySelector('#time');
 startTimer(fiveMinutes, display);
 };

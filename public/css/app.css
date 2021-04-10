@@ -321,6 +321,7 @@ iframe{
     font-family: 'Josefin Sans', sans-serif;
     text-transform: uppercase;
     font-size: 2rem;
+    line-height: normal;
     text-align: center;
 }
 

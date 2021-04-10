@@ -239,7 +239,7 @@ const controller = {
     opcion4: (req, res) => {
        
         db.User.update({
-            desafio03: 100
+            desafio03: 150
         },
         {
             where: {
@@ -249,7 +249,7 @@ const controller = {
         )
         .then(result => {
                             
-            res.render('simpson')
+            res.render('violet')
         })
         .catch(error => console.log(error));
     },
@@ -266,14 +266,14 @@ const controller = {
         )
         .then(result => {
                             
-            res.render('simpson')
+            res.render('gladiola')
         })
         .catch(error => console.log(error));
     },
     opcion2: (req, res) => {
        
         db.User.update({
-            desafio03: 100
+            desafio03: 80
         },
         {
             where: {

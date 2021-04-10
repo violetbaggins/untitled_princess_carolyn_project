@@ -29,7 +29,7 @@ window.addEventListener('load', function () {
 
         console.log("Andando");  
 
-        let intervalMove = setInterval(moveDVD, 50)
+        let intervalMove = setInterval(moveDVD, 100)
 
         function moveDVD() {
     
