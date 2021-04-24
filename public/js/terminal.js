@@ -22,7 +22,7 @@ $("body").terminal(
    question: function() {
     this.read('What is love? : ', respuesta => {
 
-        if (respuesta == "baby don't hurt me,") {
+        if (respuesta == "baby don't hurt me") {
             this.echo(`Don't hurt me, no more\n`);
         } else {
             this.echo('https://youtu.be/HEXWRTEbj1I\n');
@@ -30,7 +30,7 @@ $("body").terminal(
       });
     },
     sudo: function () {
-      $(location).attr('href','/simpson');
+      $(location).attr('href','/sudo');
       // this.echo('Sabes la palabra que abre las puertas\n');
     },
     
@@ -59,7 +59,7 @@ $("body").terminal(
       this.echo("\n[[;turquoise;]## Escribi 'emoji' para obtener un emoji random]\n");
       this.echo("\n[[;peachpuff;]## Algunos tienen beneficios...]\n");
       this.echo("\n[[;tomato;]## Otros maldiciones! >_<]\n");
-      this.echo("\n[[;sandybrown;]❗ Entre bajo su propio riesgo]\n");
+      this.echo("\n[[;sandybrown;]❕Entre bajo su propio riesgo]\n");
       
     },
     emoji: function () {
@@ -79,11 +79,9 @@ $("body").terminal(
         this.echo($('<img src="../../images/happy_squirrel.jpg"  style="width: 300px">'));
         setTimeout(function(){ 
             alert("Esa carta es algo maaaalo, maalo, maaalo"); 
-            $(location).attr('href','/graciastotales');
+            $(location).attr('href','/');
           }, 3000);
       } else {
-
-        // console.log(i);
         this.echo(emoji[i])
       }
     },

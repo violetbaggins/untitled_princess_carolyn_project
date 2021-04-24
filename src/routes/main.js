@@ -39,6 +39,8 @@ router.get('/melaaguanto', poopyController.aguante);
 //span
 router.get('/span',  poopyController.span);
 router.post('/span', poopyController.spanStore);
+router.get('/terminal', poopyController.terminal)
+router.get('/sudo', poopyController.sudo)
 
 //Mario results
 router.get('/mario', poopyController.marioPrueba)
@@ -50,7 +52,6 @@ router.get('/salondecastigo', poopyController.cafeteria)
 router.get('/opcion4', poopyController.opcion4)
 router.get('/opcion3', poopyController.opcion3)
 router.get('/opcion2', poopyController.opcion2)
-router.get('/terminal', poopyController.terminal)
 
 
 //respuesta al de mario
@@ -81,6 +82,9 @@ router.get('/javascript',  poopyController.javascript);
 // from Javascript
 router.get('/violet',  poopyController.violet);
 
+// from Desde la caja /* */
+router.get('/supermegadesafio',  poopyController.supermegadesafio);
+
 //from violet o Amarillo answer
 router.get('/graciastotales', poopyController.totales)
 
@@ -92,6 +96,9 @@ router.get('/ranking', poopyController.ranking);
 
 // Pruebas para guardar datos
 router.get('/form', poopyController.form);
+
+// Ruta para probar vistas
+router.get('/vistasPrueba', poopyController.vistasPrueba);
 
 
 

@@ -1,10 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Include Head -->
+
 <%- include('partials/head', {title: 'Rockear forever'}) %>
 <body>
+  <style>
+          @import url(https://fonts.googleapis.com/css?family=Orbitron:700);
 
-  <div class="container">
+        /* Stars 
+        ------------------------------------- */
+
+        #space, .stars {
+          overflow: hidden;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: -1;
+        }
+
+        .stars {
+          background-image: 
+            radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+            radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+          background-repeat: repeat;
+          background-size: 200px 200px;
+          animation: zoom 5s infinite;
+          opacity: 0;
+        }
+
+        .stars:nth-child(1) {
+          background-position: 50% 50%;
+          animation-delay: 0s;
+        }
+        .stars:nth-child(2) {
+          background-position: 20% 60%;
+          animation-delay: 1s;
+        }
+        .stars:nth-child(3) {
+          background-position: -20% -30%;
+          animation-delay: 2s;
+        }
+        .stars:nth-child(4) {
+          background-position: 40% -80%;
+          animation-delay: 3s;
+        }
+        .stars:nth-child(5) {
+          background-position: -20% 30%;
+          animation-delay: 4s;
+        }
+
+        @keyframes zoom {
+          0% {
+            opacity: 0;
+            transform: scale(0.5);
+            animation-timing-function: ease-in;
+          } 
+          85% {
+            opacity: 1;
+            transform: scale(2.8);
+            animation-timing-function: linear;
+          }
+          100% {
+            opacity: 0;
+            transform: scale(3.5);
+          }
+        }
+
+        /* Demo syles 
+        ------------------------------------- */
+
+        body {
+          background: #000;
+          font-family: 'Orbitron', sans-serif;
+          color: white;
+        }
+
+        h1 {
+          position: absolute;
+          z-index: 1;
+          top: 50%;
+          left: 50%;
+          margin: -1.5em -2.5em;
+          width: 5em;
+          color: #011;
+          font-size: 5em;
+          text-align: center;
+          text-shadow: 0 0 3px #6cf;
+        }
+        h1:first-line {
+          font-size: 200%;
+        }
+        .container{
+          display:flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        input{
+            border: 1px solid rgb(255, 255, 255);
+            background-color: rgba(0 , 0, 0, 0.5);
+            color: rgb(255, 255, 255);
+            padding: 5px;
+            box-shadow: 0px 0px rgb(65, 65, 65);
+            margin: 0 5px;
+            outline: none;
+            z-index: 1;
+        }
+        button{
+            border: 1px solid rgb(255, 255, 255);
+            background-color: rgba(0 , 0, 0, 0.5);
+            color: rgb(255, 255, 255);
+            padding: 5px;
+            box-shadow: 0px 0px rgb(65, 65, 65);
+            margin: 0 5px;
+            outline: none;
+        }
+        footer{
+          background-color: rgba(80, 80, 80, 0.5);
+        }
+
+  </style>
+
+
+<!-- El starfield lo robé de aca: https://codepen.io/keithclark/pen/zqcEd -->
+
+<div class="container">
+  <p>Very good! Sabes de música, sabes de los simpsons. 👏👏👏</p>
+  <br>
+
+  <p>Now don't panic but...</p>
+  <h2>¿Cuál es la respuesta a la vida, el universo y todo lo demas?</h2>
+  <form action="/ultimate" method="POST" enctype="application/json">
+      <input type="number" name="ultimate">
+      <button type="submit">enviar</button>
+  </form>
+
+</div>
+<div id="space">
+ 
+  <div class="stars"></div>
+  <div class="stars"></div>
+  <div class="stars"></div>
+  <div class="stars"></div>
+  <div class="stars"></div>
+</div>
+
+    
+  
+<!--   <div class="container">
 
     <h1>Vamooo</h1>
     <p>Sabes de música, sabes de los simpsons. 👏👏👏</p>
@@ -17,7 +166,7 @@
         <button type="submit">enviar</button>
     </form>
 
-  </div>
+  </div> -->
  
 
  

@@ -5,7 +5,7 @@ const fs = require('fs');
 const db = require('../database/models')
 const sequelize = db.sequelize;
 
-let fakename = ["Max Power", "Booby Curvas", "Pechugas Larú", "Cosme Fulanito", "Homero Thompson", "Cazaputas42", "Edna K", "nombre generado por computadora"]
+let fakename = ["Max Power", "Booby Curvas", "Pechugas Larú", "Cosme Fulanito", "Homero Thompson", "Cazaputas42", "Edna K", "nombre generado por computadora", "Come Calzón"]
 
 
 const controller = {
@@ -135,6 +135,23 @@ const controller = {
     span: (req, res) => {
         res.render('span')
     },
+    sudo: (req, res) => {
+        db.User.update({
+            desafio02: 100
+        },
+        {
+            where: {
+                id: req.session.user
+            }
+        }
+        )
+        .then(result => {
+                            
+            res.render('mario')
+        })
+        .catch(error => console.log(error));
+    },
+    
 
     spanStore: (req, res) => {
         
@@ -431,6 +448,10 @@ const controller = {
         
             
     },
+    supermegadesafio:  (req, res) =>{
+
+        res.render('supermega')
+    },
     totales: (req, res) =>{
 
         db.User.findAll({
@@ -572,7 +593,10 @@ const controller = {
      },
      marioPrueba: (req, res)=>{
          res.render('mario')
-     }
+     }, 
+     vistasPrueba: (req, res)=>{
+        res.render('hooray03')
+    },
 
 }
 
