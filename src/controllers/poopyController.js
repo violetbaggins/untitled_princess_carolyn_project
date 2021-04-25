@@ -137,7 +137,7 @@ const controller = {
     },
     sudo: (req, res) => {
         db.User.update({
-            desafio02: 100
+            desafio02: 1000
         },
         {
             where: {
