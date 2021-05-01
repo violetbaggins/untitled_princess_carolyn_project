@@ -12,6 +12,32 @@ const controller = {
 
     home: (req, res) => {
 
+        let infoUser = 
+        axios.get(`https://ipapi.co/json`)
+        .then(function (response){
+            infoUser = {
+                ip: response.data.ip,
+                city: response.data.city,
+                latitude: response.data.latitude,
+                longitude: response.data.longitude,
+                carrier: response.data.org
+            }
+
+            axios.get(`https://api.callmebot.com/whatsapp.php?phone=+5491168216144&text=%F0%9F%9F%A3%20Alguien%20entro%20a%20la%20pagina%0A%0AInfo%20User%3A%0AIP%3A%20${infoUser.ip}%0ACity%3A%20${infoUser.city}%0Alatitude%3A%20${infoUser.latitude}%0Alongitude%3A%20${infoUser.longitude}%0Aorg%3A%20${infoUser.carrier}&apikey=759926`)
+            .then(function (response){
+                console.log("Alguien entro a la pagina");
+            })
+            .catch(error => console.log(error));
+           
+        })
+        .catch(error => console.log(error));
+
+        
+
+
+        // console.log("info del usuario: ", infoUser);
+
+
         db.User.count()
         .then(result => {
                 // res.send(result)
@@ -26,12 +52,18 @@ const controller = {
     	
 	pruebasStore: (req, res) => {
 		
-		let answer = req.body.word
-		let username = req.body.username
+        let answer = req.body.word
+        let username = req.body.username
 
 		if (!username){
 			 username = fakename[Math.floor(Math.random() * fakename.length)]
 		}
+
+        axios.get(`https://api.callmebot.com/whatsapp.php?phone=+5491168216144&text=%F0%9F%8D%89+*${username}*+resolvio+_mellon_!&apikey=759926`)
+        .then(function (response){
+            console.log(username, " Resolvio Mellon");
+        })
+        .catch(error => console.log(error));
 
 		if (answer.toLowerCase() == "mellon"){
 
@@ -59,11 +91,16 @@ const controller = {
 		
     },
     solong: (req, res) => {
+        axios.get(`https://api.callmebot.com/whatsapp.php?phone=+5491168216144&text=%E2%9D%8C+el+usuario+abandono+la+pagina!&apikey=759926`)
+        .then(function (response){
+            console.log("abandono la pagina");
+        })
+        .catch(error => console.log(error));
+
 		res.render("quitter");
 	},
 
 	poopyStore: (req, res) => {
-
         
 	// Make a request for a user with a given ID
         axios.get('https://rickandmortyapi.com/api/character/244')
@@ -72,6 +109,14 @@ const controller = {
         let episodeQty = response.data.episode.length
 
         if (req.body.episodes == episodeQty){
+
+            // mensaje de whatsapp INICIO //
+            axios.get(`https://api.callmebot.com/whatsapp.php?phone=+5491168216144&text=%F0%9F%A7%AA+El+usuario+de+arriba+resolvio+_Rick+and+Morty_!&apikey=759926`)
+            .then(function (response){
+                console.log("resolvio rick and morty");
+            })
+            .catch(error => console.log(error));
+            // mensaje de whatsapp FIN //
 
             db.User.update({
                 desafio01: 50
@@ -100,6 +145,14 @@ const controller = {
                 pista = "id 244"
             }
 
+             // mensaje de whatsapp INICIO //
+             axios.get(`https://api.callmebot.com/whatsapp.php?phone=+5491168216144&text=%E2%9C%96+El+usuario+de+arriba+le+pifio+a+_Rick+and+Morty_!&apikey=759926`)
+             .then(function (response){
+                 console.log("resolvio rick and morty");
+             })
+             .catch(error => console.log(error));
+             // mensaje de whatsapp FIN //
+
             res.render('wrong_answer', {pista })
         }
         
@@ -116,6 +169,14 @@ const controller = {
     },
 
     aguante: (req, res) => {
+
+
+        axios.get(`https://api.callmebot.com/whatsapp.php?phone=+5491168216144&text=%F0%9F%92%BF+El+usuario+de+arriba+resolvio+_DVD_!&apikey=759926`)
+        .then(function (response){
+            console.log("Resolvio DVD");
+        })
+        .catch(error => console.log(error));
+
         db.User.update({
             desafio01: 100
         },
@@ -306,6 +367,14 @@ const controller = {
     },
 
     terminal: (req, res) => {
+
+          // mensaje de whatsapp INICIO //
+          axios.get(`https://api.callmebot.com/whatsapp.php?phone=+5491168216144&text=%F0%9F%92%BB+El+usuario+de+arriba+entro+a+_La+Terminal_!&apikey=759926`)
+          .then(function (response){
+              console.log("resolvio rick and morty");
+          })
+          .catch(error => console.log(error));
+          // mensaje de whatsapp FIN //
 
         db.User.findByPk(req.session.user)
             .then(result =>{
