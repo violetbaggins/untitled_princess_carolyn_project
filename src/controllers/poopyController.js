@@ -12,7 +12,7 @@ const controller = {
 
     home: (req, res) => {
 
-        let infoUser = 
+/*         let infoUser = 
         axios.get(`https://ipapi.co/json`)
         .then(function (response){
             infoUser = {
@@ -30,12 +30,7 @@ const controller = {
             .catch(error => console.log(error));
            
         })
-        .catch(error => console.log(error));
-
-        
-
-
-        // console.log("info del usuario: ", infoUser);
+        .catch(error => console.log(error)); */
 
 
         db.User.count()
@@ -110,13 +105,6 @@ const controller = {
 
         if (req.body.episodes == episodeQty){
 
-            // mensaje de whatsapp INICIO //
-            axios.get(`https://api.callmebot.com/whatsapp.php?phone=+5491168216144&text=%F0%9F%A7%AA+El+usuario+de+arriba+resolvio+_Rick+and+Morty_!&apikey=759926`)
-            .then(function (response){
-                console.log("resolvio rick and morty");
-            })
-            .catch(error => console.log(error));
-            // mensaje de whatsapp FIN //
 
             db.User.update({
                 desafio01: 50
@@ -145,13 +133,6 @@ const controller = {
                 pista = "id 244"
             }
 
-             // mensaje de whatsapp INICIO //
-             axios.get(`https://api.callmebot.com/whatsapp.php?phone=+5491168216144&text=%E2%9C%96+El+usuario+de+arriba+le+pifio+a+_Rick+and+Morty_!&apikey=759926`)
-             .then(function (response){
-                 console.log("resolvio rick and morty");
-             })
-             .catch(error => console.log(error));
-             // mensaje de whatsapp FIN //
 
             res.render('wrong_answer', {pista })
         }
@@ -171,11 +152,7 @@ const controller = {
     aguante: (req, res) => {
 
 
-        axios.get(`https://api.callmebot.com/whatsapp.php?phone=+5491168216144&text=%F0%9F%92%BF+El+usuario+de+arriba+resolvio+_DVD_!&apikey=759926`)
-        .then(function (response){
-            console.log("Resolvio DVD");
-        })
-        .catch(error => console.log(error));
+    
 
         db.User.update({
             desafio01: 100
@@ -368,13 +345,7 @@ const controller = {
 
     terminal: (req, res) => {
 
-          // mensaje de whatsapp INICIO //
-          axios.get(`https://api.callmebot.com/whatsapp.php?phone=+5491168216144&text=%F0%9F%92%BB+El+usuario+de+arriba+entro+a+_La+Terminal_!&apikey=759926`)
-          .then(function (response){
-              console.log("resolvio rick and morty");
-          })
-          .catch(error => console.log(error));
-          // mensaje de whatsapp FIN //
+         
 
         db.User.findByPk(req.session.user)
             .then(result =>{
