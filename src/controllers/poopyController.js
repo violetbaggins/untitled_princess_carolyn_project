@@ -54,11 +54,11 @@ const controller = {
 			 username = fakename[Math.floor(Math.random() * fakename.length)]
 		}
 
-        axios.get(`https://api.callmebot.com/whatsapp.php?phone=+5491168216144&text=%F0%9F%8D%89+*${username}*+resolvio+_mellon_!&apikey=759926`)
+ /*        axios.get(`https://api.callmebot.com/whatsapp.php?phone=+5491168216144&text=%F0%9F%8D%89+*${username}*+resolvio+_mellon_!&apikey=759926`)
         .then(function (response){
             console.log(username, " Resolvio Mellon");
         })
-        .catch(error => console.log(error));
+        .catch(error => console.log(error)); */
 
 		if (answer.toLowerCase() == "mellon"){
 
@@ -86,11 +86,11 @@ const controller = {
 		
     },
     solong: (req, res) => {
-        axios.get(`https://api.callmebot.com/whatsapp.php?phone=+5491168216144&text=%E2%9D%8C+el+usuario+abandono+la+pagina!&apikey=759926`)
+       /*  axios.get(`https://api.callmebot.com/whatsapp.php?phone=+5491168216144&text=%E2%9D%8C+el+usuario+abandono+la+pagina!&apikey=759926`)
         .then(function (response){
             console.log("abandono la pagina");
         })
-        .catch(error => console.log(error));
+        .catch(error => console.log(error)); */
 
 		res.render("quitter");
 	},
