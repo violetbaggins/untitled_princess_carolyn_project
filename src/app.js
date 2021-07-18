@@ -17,7 +17,7 @@ app.use(session({
     saveUninitialized: true
   }));
 
-app.use(userMiddleware);
+// app.use(userMiddleware);
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views')); // Define la ubicación de la carpeta de las Vistas

@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 
-.romper div *:nth-child(1){
+.romper div *:nth-child(2){
     transform: translateY(500px);
     opacity: 0;
     transition: all 1s;
@@ -282,16 +282,20 @@ iframe{
 }
 .txt-blue{
     color: dodgerblue;
+    line-height: normal;
 }
 .txt-green{
     color: limegreen;
+    line-height: normal;
 }
 .txt-pink{
     color: hotpink;
+    line-height: normal;
 }
 .txt-pink a{
     color: hotpink;
     text-decoration: none;
+    line-height: normal;
 }
 
 .txt-pink a:hover{

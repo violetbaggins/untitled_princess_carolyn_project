@@ -12,47 +12,28 @@ const controller = {
 
     home: (req, res) => {
 
-/*         let infoUser = 
-        axios.get(`https://ipapi.co/json`)
-        .then(function (response){
-            infoUser = {
-                ip: response.data.ip,
-                city: response.data.city,
-                latitude: response.data.latitude,
-                longitude: response.data.longitude,
-                carrier: response.data.org
-            }
-
-            axios.get(`https://api.callmebot.com/whatsapp.php?phone=+5491168216144&text=%F0%9F%9F%A3%20Alguien%20entro%20a%20la%20pagina%0A%0AInfo%20User%3A%0AIP%3A%20${infoUser.ip}%0ACity%3A%20${infoUser.city}%0Alatitude%3A%20${infoUser.latitude}%0Alongitude%3A%20${infoUser.longitude}%0Aorg%3A%20${infoUser.carrier}&apikey=759926`)
-            .then(function (response){
-                console.log("Alguien entro a la pagina");
-            })
-            .catch(error => console.log(error));
-           
-        })
-        .catch(error => console.log(error)); */
-
-
-        db.User.count()
+// --------- CODIGO PARA USAR CON DB --------------- //
+/*         db.User.count()
         .then(result => {
                 // res.send(result)
                 res.render("index", {result})
             }
 
         )
-        .catch(error => console.log(error));
+        .catch(error => console.log(error)); */
+// --------- FIN CODIGO PARA USAR CON DB --------------- //
 
-        // res.render('index');
+        res.render('index');
     },
     	
 	pruebasStore: (req, res) => {
 		
         let answer = req.body.word
-        let username = req.body.username
+        // let username = req.body.username
 
-		if (!username){
-			 username = fakename[Math.floor(Math.random() * fakename.length)]
-		}
+		// if (!username){
+		// 	 username = fakename[Math.floor(Math.random() * fakename.length)]
+		// }
 
  /*        axios.get(`https://api.callmebot.com/whatsapp.php?phone=+5491168216144&text=%F0%9F%8D%89+*${username}*+resolvio+_mellon_!&apikey=759926`)
         .then(function (response){
@@ -62,21 +43,21 @@ const controller = {
 
 		if (answer.toLowerCase() == "mellon"){
 
-            db.User.create({
-                name: username,
-            })
-            .then(name => {
+// --------- CODIGO PARA USAR CON DB --------------- //
+            // db.User.create({
+            //     name: username,
+            // })
+            // .then(name => {
                 
-                let username = name.dataValues.name
-                req.session.user = name.dataValues.id
-                console.log("console log de req.session.user", req.session.user);
-                res.render('poopy', {username});
-                // res.send('Comentario enviado');
-            })
-            .catch(error => console.log(error));    
-
-            // db.User.findOne
-
+            //     let username = name.dataValues.name
+            //     req.session.user = name.dataValues.id
+            //     console.log("console log de req.session.user", req.session.user);
+            //     res.render('poopy', {username});
+            //     // res.send('Comentario enviado');
+            // })
+            // .catch(error => console.log(error));    
+// --------- FIN CODIGO PARA USAR CON DB --------------- //
+            res.render('poopy');
           
 		}else{
            
@@ -106,7 +87,8 @@ const controller = {
         if (req.body.episodes == episodeQty){
 
 
-            db.User.update({
+// --------- CODIGO PARA USAR CON DB --------------- //
+         /*    db.User.update({
                 desafio01: 50
             },
             {
@@ -120,9 +102,14 @@ const controller = {
                 req.session.desafio01 = 50
                 res.render('hooray01' )
             })
-            .catch(error => console.log(error));
+            .catch(error => console.log(error)); */
            
             // guardar que paso "desafio01" en DB
+
+// --------- FIN CODIGO PARA USAR CON DB --------------- //
+
+            res.render('hooray01' )
+
         } else {
 
             let pista
@@ -150,11 +137,9 @@ const controller = {
     },
 
     aguante: (req, res) => {
-
-
     
-
-        db.User.update({
+// --------- CODIGO PARA USAR CON DB --------------- //
+       /*  db.User.update({
             desafio01: 100
         },
         {
@@ -167,14 +152,21 @@ const controller = {
                         
             res.render('aguante' )
         })
-        .catch(error => console.log(error));
+        .catch(error => console.log(error)); */
+// --------- FIN CODIGO PARA USAR CON DB --------------- //
+
+        res.render('aguante' )
+
     },
 
     span: (req, res) => {
         res.render('span')
     },
+
     sudo: (req, res) => {
-        db.User.update({
+
+// --------- CODIGO PARA USAR CON DB --------------- //
+       /*  db.User.update({
             desafio02: 1000
         },
         {
@@ -187,7 +179,10 @@ const controller = {
                             
             res.render('mario')
         })
-        .catch(error => console.log(error));
+        .catch(error => console.log(error)); */
+// --------- FIN CODIGO PARA USAR CON DB --------------- //
+
+        res.render('mario')
     },
     
 
@@ -230,9 +225,9 @@ const controller = {
 
         if (req.body.spanword == "SuckiT"){
             
-
+// --------- CODIGO PARA USAR CON DB --------------- //
             // guardar que paso "desafio02" en DB
-            db.User.update({
+         /*    db.User.update({
                 desafio02: 30
             },
             {
@@ -245,7 +240,12 @@ const controller = {
                                 
                 res.render('mario')
             })
-            .catch(error => console.log(error));
+            .catch(error => console.log(error)); */
+
+// --------- FIN CODIGO PARA USAR CON DB --------------- //
+
+            res.render('mario')
+
         } else {
 
             let pista
@@ -270,10 +270,11 @@ const controller = {
     mario: (req, res) => {
         
         if(req.body.marioanswer == 3){
-            
+
+// --------- CODIGO PARA USAR CON DB --------------- //
             // guardar que paso "desafio03" en DB
             
-            db.User.update({
+          /*   db.User.update({
                 desafio03: 60
             },
             {
@@ -286,14 +287,20 @@ const controller = {
                                 
                 res.render('hooray02')
             })
-            .catch(error => console.log(error));
+            .catch(error => console.log(error)); */
+// --------- FIN CODIGO PARA USAR CON DB --------------- //
+
+            res.render('hooray02')
+
         } else {
             res.render('wrong_answer', {pista: "A ver, son numeros podes probar"})
         }
     },
+
     opcion4: (req, res) => {
-       
-        db.User.update({
+
+// --------- FIN CODIGO PARA USAR CON DB --------------- //
+      /*   db.User.update({
             desafio03: 150
         },
         {
@@ -306,11 +313,16 @@ const controller = {
                             
             res.render('violet')
         })
-        .catch(error => console.log(error));
+        .catch(error => console.log(error)); */
+// --------- FIN CODIGO PARA USAR CON DB --------------- //
+
+        res.render('violet')
+
     },
     opcion3: (req, res) => {
-       
-        db.User.update({
+
+// --------- CODIGO PARA USAR CON DB --------------- //
+       /*  db.User.update({
             desafio03: 100
         },
         {
@@ -323,11 +335,16 @@ const controller = {
                             
             res.render('gladiola')
         })
-        .catch(error => console.log(error));
+        .catch(error => console.log(error)); */
+
+// --------- FIN CODIGO PARA USAR CON DB --------------- //
+        res.render('gladiola')
+
     },
     opcion2: (req, res) => {
-       
-        db.User.update({
+
+// --------- CODIGO PARA USAR CON DB --------------- //
+       /*  db.User.update({
             desafio03: 80
         },
         {
@@ -340,20 +357,25 @@ const controller = {
                             
             res.render('simpson')
         })
-        .catch(error => console.log(error));
+        .catch(error => console.log(error)); */
+
+// --------- FIN CODIGO PARA USAR CON DB --------------- //
+
+        res.render('simpson')
     },
 
     terminal: (req, res) => {
 
-         
-
-        db.User.findByPk(req.session.user)
+// --------- CODIGO PARA USAR CON DB --------------- //     
+        /* db.User.findByPk(req.session.user)
             .then(result =>{
                 res.render('terminal', {result})
                 console.log("resultado findby PK: ", result);
             })
-            .catch(error => console.log(error));
-       
+            .catch(error => console.log(error)); */
+// --------- FIN CODIGO PARA USAR CON DB --------------- //
+
+            res.render('terminal')
     },
 
     simpson: (req, res) => {
@@ -374,8 +396,9 @@ const controller = {
             && req.body.simpquiz09 == "MagicPinball"
             && req.body.simpquiz10 == "SpinalTap"){
 
+// --------- CODIGO PARA USAR CON DB --------------- //     
                 // guardar que paso "desafio04" en DB
-                db.User.update({
+         /*        db.User.update({
                     desafio04: 100
                 },
                 {
@@ -389,8 +412,10 @@ const controller = {
                     res.render("hooray03")
                  
                 })
-                .catch(error => console.log(error));
+                .catch(error => console.log(error)); */
+// --------- FIN CODIGO PARA USAR CON DB --------------- //     
 
+            res.render("hooray03")
         }else{
 
             res.render("toobad")
@@ -399,10 +424,11 @@ const controller = {
     },
     ultimate:  (req, res) => {
   
+// --------- CODIGO PARA USAR CON DB --------------- //     
         if(req.body.ultimate == "42"){
 
             // guardar que paso "desafio05" en DB
-            db.User.update({
+            /* db.User.update({
                 desafio05: 20
             },
             {
@@ -416,9 +442,13 @@ const controller = {
                 res.render('ultimate')
              
             })
-            .catch(error => console.log(error));
+            .catch(error => console.log(error)); */
+
+// --------- CODIGO PARA USAR CON DB --------------- //     
+
+            res.render('ultimate')
         } else {
-            res.send('Perdiste')
+            res.send('Perdiste. Si, me re esmere en esta vista... res.send perdiste. Anda para atras y proba de nuevo')
         }
     },
 
@@ -426,15 +456,18 @@ const controller = {
 
         res.render("gladiola")
     },
+
     javascript: (req, res) => {
 
         res.render("noscript")
         
     },
+
     violet: (req, res) => {
-        
+
+// --------- CODIGO PARA USAR CON DB --------------- //
         // guardar que paso "desafio07" en DB
-        db.User.update({
+      /*   db.User.update({
             desafio07: 150
         },
         {
@@ -448,9 +481,12 @@ const controller = {
             res.render("violet")
          
         })
-        .catch(error => console.log(error));
-        
+        .catch(error => console.log(error)); */
+// --------- FIN CODIGO PARA USAR CON DB --------------- //
+
+        res.render("violet")
     },
+
     amarillo: (req, res) => {
 
         res.render("amarillo")
@@ -463,10 +499,10 @@ const controller = {
 
             if (answer.toLowerCase() == "bgh"){
             
-                // res.redirect('/poopy');
+// --------- CODIGO PARA USAR CON DB --------------- //
                 
                 // guardar que paso "desafio06" en DB
-                db.User.update({
+               /*  db.User.update({
                     desafio06: 40
                 },
                 {
@@ -480,7 +516,10 @@ const controller = {
                     res.render("comments")
                  
                 })
-                .catch(error => console.log(error));
+                .catch(error => console.log(error)); */
+// --------- FIN CODIGO PARA USAR CON DB --------------- //
+
+            res.render("violet")
 
             }else{
                 res.render('wrong_answer', {pista: "reliquias, espadas y episodios"})
@@ -493,8 +532,8 @@ const controller = {
         res.render('supermega')
     },
     totales: (req, res) =>{
-
-        db.User.findAll({
+// --------- CODIGO PARA USAR CON DB --------------- //
+       /*  db.User.findAll({
             attributes: [[db.sequelize.literal('id'), 'id'],[db.sequelize.literal('name'), 'name'],[db.sequelize.literal('SUM(desafio01 + desafio02 + desafio03 + desafio04 + desafio05 + desafio06 + desafio07)'), 'total'],[db.sequelize.literal('createdAt'), 'inicio'],[db.sequelize.literal('updatedAt'), 'fin']],
             group : ['User.id'],
             raw: true,
@@ -537,12 +576,15 @@ const controller = {
             }
 
         )
-        .catch(error => console.log(error));
+        .catch(error => console.log(error)); */
+// --------- FIN CODIGO PARA USAR CON DB --------------- //
+
+            res.send("No hay totales para ver hasta que vuelva la DB")
     },
 
     ranking: (req, res) =>{
-
-        db.User.findAll({
+// --------- CODIGO PARA USAR CON DB --------------- //
+    /*     db.User.findAll({
             attributes: [[db.sequelize.literal('id'), 'id'],[db.sequelize.literal('name'), 'name'],[db.sequelize.literal('SUM(desafio01 + desafio02 + desafio03 + desafio04 + desafio05 + desafio06 + desafio07)'), 'total'],[db.sequelize.literal('createdAt'), 'inicio'],[db.sequelize.literal('updatedAt'), 'fin']],
             group : ['User.id'],
             raw: true,
@@ -587,12 +629,18 @@ const controller = {
             }
 
         )
-        .catch(error => console.log(error));
+        .catch(error => console.log(error)); */
+
+// --------- FIN CODIGO PARA USAR CON DB --------------- //
+
+            res.send("No hay Ranking para ver hasta que vuelva la DB")
     },
 
     comments: (req, res) => {
+
+// --------- CODIGO PARA USAR CON DB --------------- //
             
-        db.Comment.create({
+    /*     db.Comment.create({
             name: req.body.name,
             email: req.body.email,
             comment: req.body.comment,				
@@ -601,8 +649,10 @@ const controller = {
             
             res.redirect('/graciastotales');
         })
-        .catch(error => console.log(error));     
+        .catch(error => console.log(error));    */
         
+// --------- FIN CODIGO PARA USAR CON DB --------------- //
+        res.send("No hay Comments para ver hasta que vuelva la DB")
     },
 	form: (req, res) => {
         
@@ -610,7 +660,8 @@ const controller = {
 	},
      pepinito: (req, res) => {
 
-        let usuarios = 
+// ---------  CODIGO PARA USAR CON DB --------------- //
+     /*    let usuarios = 
              db.User.findAll({
              raw: true,
              order: sequelize.literal('id DESC')
@@ -627,8 +678,9 @@ const controller = {
              }
  
          )
-         .catch(error => console.log(error));
- 
+         .catch(error => console.log(error)); */
+// --------- FIN CODIGO PARA USAR CON DB --------------- //
+        res.send("No hay Pepinito para ver hasta que vuelva la DB")
  
      },
      marioPrueba: (req, res)=>{

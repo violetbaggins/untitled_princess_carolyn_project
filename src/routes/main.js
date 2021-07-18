@@ -89,7 +89,7 @@ router.get('/supermegadesafio',  poopyController.supermegadesafio);
 router.get('/graciastotales', poopyController.totales)
 
 //from amarillo / comments.ejs
-router.post('/comments',  poopyController.comments);
+// router.post('/comments',  poopyController.comments);
 
 // ranking
 router.get('/ranking', poopyController.ranking);
